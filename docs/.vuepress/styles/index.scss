@@ -1,0 +1,19 @@
+.rtl .home {
+    direction: rtl;
+}
+
+.hiden-title .home #main-title {
+    display: none;
+}
+
+.rtl .home #main-title {
+    display: none;
+}
+
+.hiden-title .home .description {
+    display: none;
+}
+
+.rtl .home .description {
+    display: none;
+}

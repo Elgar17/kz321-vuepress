@@ -1,0 +1,18 @@
+{
+  "name": "kz321",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "enj": "vuepress eject"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-register-components": "^2.0.0-beta.27",
+    "vuepress": "^2.0.0-beta.27"
+  }
+}
