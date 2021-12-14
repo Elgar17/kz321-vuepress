@@ -1,4 +1,6 @@
-const { path } = require('@vuepress/utils')
+const {
+  path
+} = require('@vuepress/utils')
 
 module.exports = {
   title: 'KZ321',
@@ -11,8 +13,7 @@ module.exports = {
     // 添加百度统计
     [
       "script",
-      {
-      },
+      {},
       `var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
@@ -29,31 +30,35 @@ module.exports = {
   themeConfig: { // 主题配置
     logo: '/log.svg',
     lastUpdated: true, // string | boolean
-    navbar: [{
-      text: "首页",
-      link: "/"
-    }, {
-      text: "提交网址",
-      link: "https://support.qq.com/products/369710"
-    }, {
-      text: '关于',
-      link: "/about.md"
-    }],
     locales: {
       title: "语言",
       '/': {
         selectLanguageName: '简体中文',
+        navbar: [{
+          text: "首页",
+          link: "/"
+        }, {
+          text: "提交网址",
+          link: "https://support.qq.com/products/369710"
+        }, {
+          text: '关于',
+          link: "/about.md"
+        }],
       },
       '/kz/': {
         selectLanguageName: 'قازاقشا',
+        navbar: [{
+          text: "باس بەت",
+          link: "/"
+        }, {
+          text: "سايىت قوسۋ ",
+          link: "https://support.qq.com/products/369710"
+        }, {
+          text: 'ءبىزجايلى ',
+          link: "/about.md"
+        }],
       },
     }
-    // ,
-    // // 为以下路由添加侧边栏
-    // sidebar: [{
-    //   text: '导航',
-    //   link: '/'
-    // }]
   },
   locales: {
     // 键名是该语言所属的子路径
@@ -71,12 +76,12 @@ module.exports = {
   },
   plugins: [
     [
-        '@vuepress/register-components',
-        {
-            components: {
-                InputSearch: path.resolve(__dirname, './components/InputSearch.vue'),
-            },
+      '@vuepress/register-components',
+      {
+        components: {
+          InputSearch: path.resolve(__dirname, './components/InputSearch.vue'),
         },
+      },
     ],
-],
+  ],
 }

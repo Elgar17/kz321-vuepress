@@ -1,4 +1,13 @@
+:root{
+    --c-brand: #7573fd;
+}
+@font-face {
+    font-family: kaz;
+    src: url('./KazNet.ttf');
+}
+
 .rtl .home {
+    font-family: kaz;
     direction: rtl;
 }
 

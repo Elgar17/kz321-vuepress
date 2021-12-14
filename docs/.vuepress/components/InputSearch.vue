@@ -1,7 +1,7 @@
 <template>
   <div class="input-search-wrap">
     <div class="logo-wrapper">
-      <img src="../public/kz321.top.png" alt="" />
+      <img src="../public/kz321.png" alt="" />
     </div>
     <div class="input-search">
       <ul class="ingin-wrapper">
@@ -16,7 +16,9 @@
       </ul>
       <input type="text" v-model="input" placeholder="请输入" />
       <button @click="search">搜索</button>
-      <span class="ctrld"> ❤ Ctrl + D 收藏到导航</span>
+      <span :class="{ heiden: isHeiden }" class="ctrld">
+        ❤ Ctrl + D 收藏到导航</span
+      >
     </div>
   </div>
 </template>
@@ -24,19 +26,27 @@
 <script>
 export default {
   name: "InputSearch",
-  data() {
+  data () {
     return {
       current: "百度",
       ingins: ["百度", "谷歌", "必应", "翻译"],
       input: "",
+      isHeiden: false,
       baidu: "https://www.baidu.com/s?ie=UTF-8&wd=",
       google: "https://www.google.com/search?ie=utf-8&q=",
       bing: "https://cn.bing.com/search?q=",
       fanyi: "https://fanyi.baidu.com/translate#zh/en/"
     };
   },
+  mounted () {
+    this.time = setTimeout(() => {
+      this.isHeiden = true
+      clearTimeout(this.time)
+      this.time = null
+    }, 5000)
+  },
   methods: {
-    search() {
+    search () {
       if (this.input.trim() == "") return;
       switch (this.current) {
         case "百度":
@@ -150,5 +160,8 @@ button {
 }
 .input-search-wrap .input-search button:hover {
   cursor: pointer;
+}
+.heiden {
+  display: none;
 }
 </style>

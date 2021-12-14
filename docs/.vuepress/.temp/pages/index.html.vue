@@ -1,4 +1,4 @@
-<template><!-- <InputSearch/> -->
+<template><InputSearch/>
 <h2 id="📄-分类" tabindex="-1"><a class="header-anchor" href="#📄-分类" aria-hidden="true">#</a> 📄 分类</h2>
 <table>
 <thead>
@@ -73,7 +73,8 @@
 <tr>
 <th>乌兰网络电台</th>
 <th>Baursak</th>
-<th>KWABOL</th>
+<th>Kwabol</th>
+<th>Auen</th>
 </tr>
 </thead>
 <tbody>
@@ -81,11 +82,13 @@
 <td><img src="/wlan.png" alt="kaz"></td>
 <td><img src="/" alt="Baursak二维码"></td>
 <td><img src="/kwabol.png" alt="KWABOL"></td>
+<td><img src="/auen.png" alt="123"></td>
 </tr>
 <tr>
 <td>有温度的网络电台</td>
 <td>爆笑口袋视频</td>
 <td>工作，创业等有趣内容</td>
+<td>最新音乐视频</td>
 </tr>
 </tbody>
 </table>
@@ -98,6 +101,7 @@
 <th>7bilim</th>
 <th>阿速信息</th>
 <th>民汉翻译</th>
+<th>OYAN单词</th>
 </tr>
 </thead>
 <tbody>
@@ -106,12 +110,14 @@
 <td><img src="/" alt="7bilim小程序二维码"></td>
 <td><img src="/asu.png" alt="阿速信息小程序二维码"></td>
 <td><img src="/minhan.png" alt="民汉翻译"></td>
+<td><img src="/oylan.png" alt="OYLAN单词"></td>
 </tr>
 <tr>
 <td>哈萨克语翻译小程序</td>
 <td>在线课堂</td>
 <td>信息发布平台</td>
 <td>哈汉翻译小程序</td>
+<td>背单词小程序</td>
 </tr>
 </tbody>
 </table>

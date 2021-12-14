@@ -5,7 +5,8 @@ export const data = {
   "lang": "kz",
   "frontmatter": {
     "home": true,
-    "pageClass": "rtl"
+    "pageClass": "rtl",
+    "footer": "Copyright © 2021 Elǵar"
   },
   "excerpt": "",
   "headers": [
@@ -29,5 +30,27 @@ export const data = {
     }
   ],
   "filePathRelative": "kz/README.md",
-  "git": {}
+  "git": {
+    "updatedTime": 1639408466000,
+    "contributors": [
+      {
+        "name": "elgar17",
+        "email": "1653794708@qq.com",
+        "commits": 1
+      }
+    ]
+  }
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }

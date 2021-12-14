@@ -1,29 +1,44 @@
 export const themeData = {
   "logo": "/log.svg",
   "lastUpdated": true,
-  "navbar": [
-    {
-      "text": "首页",
-      "link": "/"
-    },
-    {
-      "text": "提交网址",
-      "link": "https://support.qq.com/products/369710"
-    },
-    {
-      "text": "关于",
-      "link": "/about.md"
-    }
-  ],
   "locales": {
     "title": "语言",
     "/": {
-      "selectLanguageName": "简体中文"
+      "selectLanguageName": "简体中文",
+      "navbar": [
+        {
+          "text": "首页",
+          "link": "/"
+        },
+        {
+          "text": "提交网址",
+          "link": "https://support.qq.com/products/369710"
+        },
+        {
+          "text": "关于",
+          "link": "/about.md"
+        }
+      ]
     },
     "/kz/": {
-      "selectLanguageName": "قازاقشا"
+      "selectLanguageName": "قازاقشا",
+      "navbar": [
+        {
+          "text": "باس بەت",
+          "link": "/"
+        },
+        {
+          "text": "سايىت قوسۋ ",
+          "link": "https://support.qq.com/products/369710"
+        },
+        {
+          "text": "ءبىزجايلى ",
+          "link": "/about.md"
+        }
+      ]
     }
   },
+  "navbar": [],
   "darkMode": true,
   "repo": null,
   "selectLanguageText": "Languages",
@@ -45,4 +60,17 @@ export const themeData = {
   "openInNewWindow": "open in new window",
   "toggleDarkMode": "toggle dark mode",
   "toggleSidebar": "toggle sidebar"
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updateThemeData) {
+    __VUE_HMR_RUNTIME__.updateThemeData(themeData)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ themeData }) => {
+    __VUE_HMR_RUNTIME__.updateThemeData(themeData)
+  })
 }
