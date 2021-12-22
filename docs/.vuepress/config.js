@@ -80,6 +80,7 @@ module.exports = {
       {
         components: {
           InputSearch: path.resolve(__dirname, './components/InputSearch.vue'),
+          EpidemicMap: path.resolve(__dirname, './components/EpidemicMap.vue'),
         },
       },
     ],
