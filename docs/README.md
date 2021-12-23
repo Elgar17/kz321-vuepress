@@ -1,7 +1,7 @@
 ---
 home: true
 lang: zh-CN
-title: KZ321
+title: 哈萨克语导航
 description: 哈萨克语导航网站
 footer: Copyright © 2021 Elǵar
 pageClass: hiden-title
@@ -38,3 +38,7 @@ pageClass: hiden-title
 | 哈萨克语翻译小程序                | 在线课堂                 | 信息发布平台                      | 哈汉翻译小程序           | 背单词小程序    |
 
 [提交小程序](https://support.qq.com/products/369710)。
+
+## 😷 疫情动态
+
+<EpidemicMap/>

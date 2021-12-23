@@ -87,7 +87,7 @@
 </tbody>
 </table>
 <p><a href="https://support.qq.com/products/369710" target="_blank" rel="noopener noreferrer">وسى ارانى باسىپ قوسۋ<OutboundLink/></a></p>
-<h2 id="📱-شاعىن-پروعىراممالار" tabindex="-1"><a class="header-anchor" href="#📱-شاعىن-پروعىراممالار" aria-hidden="true">#</a> 📱 شاعىن پروعىراممالار</h2>
+<h2 id="📱-شاعىن-پروگىراممالار" tabindex="-1"><a class="header-anchor" href="#📱-شاعىن-پروگىراممالار" aria-hidden="true">#</a> 📱 شاعىن پروگىراممالار</h2>
 <table>
 <thead>
 <tr>

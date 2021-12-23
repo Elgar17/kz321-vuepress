@@ -1,11 +1,12 @@
 export const data = {
   "key": "v-2d0a9f07",
   "path": "/kz/",
-  "title": "",
+  "title": "قازاقشا باس بەت",
   "lang": "kz",
   "frontmatter": {
     "home": true,
     "pageClass": "rtl",
+    "title": "قازاقشا باس بەت",
     "footer": "Copyright © 2021 Elǵar"
   },
   "excerpt": "",
@@ -24,19 +25,19 @@ export const data = {
     },
     {
       "level": 2,
-      "title": "📱 شاعىن پروعىراممالار",
-      "slug": "📱-شاعىن-پروعىراممالار",
+      "title": "📱 شاعىن پروگىراممالار",
+      "slug": "📱-شاعىن-پروگىراممالار",
       "children": []
     }
   ],
   "filePathRelative": "kz/README.md",
   "git": {
-    "updatedTime": 1639408466000,
+    "updatedTime": 1639489952000,
     "contributors": [
       {
         "name": "elgar17",
         "email": "1653794708@qq.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   }

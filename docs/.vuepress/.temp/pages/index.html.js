@@ -1,12 +1,12 @@
 export const data = {
   "key": "v-8daa1a0e",
   "path": "/",
-  "title": "KZ321",
+  "title": "哈萨克语导航",
   "lang": "zh-CN",
   "frontmatter": {
     "home": true,
     "lang": "zh-CN",
-    "title": "KZ321",
+    "title": "哈萨克语导航",
     "description": "哈萨克语导航网站",
     "footer": "Copyright © 2021 Elǵar",
     "pageClass": "hiden-title"
@@ -30,16 +30,22 @@ export const data = {
       "title": "📱 小程序",
       "slug": "📱-小程序",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "😷 疫情动态",
+      "slug": "😷-疫情动态",
+      "children": []
     }
   ],
   "filePathRelative": "README.md",
   "git": {
-    "updatedTime": 1639408466000,
+    "updatedTime": 1639489952000,
     "contributors": [
       {
         "name": "elgar17",
         "email": "1653794708@qq.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   }

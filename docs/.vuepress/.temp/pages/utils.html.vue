@@ -1,8 +1,8 @@
-<template><h2 id="🛠-工具" tabindex="-1"><a class="header-anchor" href="#🛠-工具" aria-hidden="true">#</a> 🛠 工具</h2>
-<p>这里收集了一些常用的工具类网站。</p>
+<template><h1 id="百宝箱" tabindex="-1"><a class="header-anchor" href="#百宝箱" aria-hidden="true">#</a> 百宝箱</h1>
+<p>这里会收集一些网上的学习哈萨克语相关的资料，如果你有什么好的资料欢迎联系我投稿！</p>
+<h2 id="资料" tabindex="-1"><a class="header-anchor" href="#资料" aria-hidden="true">#</a> 资料</h2>
 <ol>
-<li><a href="http://download.ahmetoffice.com/" target="_blank" rel="noopener noreferrer">AhmetOffice<OutboundLink/></a>：哈萨克语办公软件。</li>
-<li><a href="https://www.sozdik.net/" target="_blank" rel="noopener noreferrer">sozdik<OutboundLink/></a>：哈萨克语翻译软件。</li>
-<li><a href="https://www.qazlatyn.kz/tote/converter/text" target="_blank" rel="noopener noreferrer">文字转换<OutboundLink/></a>：多种文字相互转换。</li>
+<li><a href="https://elgara.gitee.io/demo/hozi/#/form" target="_blank" rel="noopener noreferrer">哈萨克语字母表<OutboundLink/></a></li>
+<li><a href="https://www.zhihu.com/question/65270788/answer/325188906" target="_blank" rel="noopener noreferrer">如何评价哈萨克斯坦拉丁化哈萨克文字母表？<OutboundLink/></a></li>
 </ol>
 </template>

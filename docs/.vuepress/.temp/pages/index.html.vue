@@ -122,4 +122,5 @@
 </tbody>
 </table>
 <p><a href="https://support.qq.com/products/369710" target="_blank" rel="noopener noreferrer">提交小程序<OutboundLink/></a>。</p>
-</template>
+<h2 id="😷-疫情动态" tabindex="-1"><a class="header-anchor" href="#😷-疫情动态" aria-hidden="true">#</a> 😷 疫情动态</h2>
+<EpidemicMap/></template>

@@ -11,6 +11,10 @@ export const themeData = {
           "link": "/"
         },
         {
+          "text": "学习",
+          "link": "/learn.md"
+        },
+        {
           "text": "提交网址",
           "link": "https://support.qq.com/products/369710"
         },

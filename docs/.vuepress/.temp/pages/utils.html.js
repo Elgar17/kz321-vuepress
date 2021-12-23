@@ -1,22 +1,23 @@
 export const data = {
   "key": "v-581c4681",
   "path": "/utils.html",
-  "title": "",
+  "title": "百宝箱",
   "lang": "zh",
-  "frontmatter": {
-    "sidebar": false
-  },
+  "frontmatter": {},
   "excerpt": "",
   "headers": [
     {
       "level": 2,
-      "title": "🛠 工具",
-      "slug": "🛠-工具",
+      "title": "资料",
+      "slug": "资料",
       "children": []
     }
   ],
   "filePathRelative": "utils.md",
-  "git": {}
+  "git": {
+    "updatedTime": null,
+    "contributors": []
+  }
 }
 
 if (import.meta.webpackHot) {
