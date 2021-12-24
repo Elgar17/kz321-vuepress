@@ -19,8 +19,8 @@ export const data = {
     },
     {
       "level": 2,
-      "title": "📚ءۇنحات الەۋمەتتىك ءنومىرلەر",
-      "slug": "📚ءۇنحات-الەۋمەتتىك-ءنومىرلەر",
+      "title": "📚ءۇنحات الەۋمەتتىك نومىرلەر",
+      "slug": "📚ءۇنحات-الەۋمەتتىك-نومىرلەر",
       "children": []
     },
     {
@@ -32,26 +32,13 @@ export const data = {
   ],
   "filePathRelative": "kz/README.md",
   "git": {
-    "updatedTime": 1639489952000,
+    "updatedTime": 1640267713000,
     "contributors": [
       {
         "name": "elgar17",
         "email": "1653794708@qq.com",
-        "commits": 2
+        "commits": 3
       }
     ]
   }
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

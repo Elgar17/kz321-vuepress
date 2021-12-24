@@ -5,6 +5,7 @@
 ## 资料
 1. [哈萨克语字母表](https://elgara.gitee.io/demo/hozi/#/form)
 1. [如何评价哈萨克斯坦拉丁化哈萨克文字母表？](https://www.zhihu.com/question/65270788/answer/325188906)
+1. [قازاق ءتىلىنىڭ ەملە ەرەجەسى](https://mp.weixin.qq.com/s/pDnPV-Mzezn3qZhZZlwrwA)
 
 <!-- ## 电影
 

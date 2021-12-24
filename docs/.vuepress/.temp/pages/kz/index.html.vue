@@ -61,11 +61,11 @@
 </tbody>
 </table>
 <p><a href="https://support.qq.com/products/369710" target="_blank" rel="noopener noreferrer">وسى ارانى باسىپ قوسۋ <OutboundLink/></a></p>
-<h2 id="📚ءۇنحات-الەۋمەتتىك-ءنومىرلەر" tabindex="-1"><a class="header-anchor" href="#📚ءۇنحات-الەۋمەتتىك-ءنومىرلەر" aria-hidden="true">#</a> 📚ءۇنحات الەۋمەتتىك ءنومىرلەر</h2>
+<h2 id="📚ءۇنحات-الەۋمەتتىك-نومىرلەر" tabindex="-1"><a class="header-anchor" href="#📚ءۇنحات-الەۋمەتتىك-نومىرلەر" aria-hidden="true">#</a> 📚ءۇنحات الەۋمەتتىك نومىرلەر</h2>
 <table>
 <thead>
 <tr>
-<th>ۇلان توراب راديو</th>
+<th>ۇلان توراپ  راديوسى</th>
 <th>باۋرساق</th>
 <th>كۋابول</th>
 <th>اۋەن</th>
@@ -74,7 +74,7 @@
 <tbody>
 <tr>
 <td><img src="/wlan.png" alt="kaz"></td>
-<td><img src="/" alt="Baursak二维码"></td>
+<td><img src="/baursak.png" alt="Baursak二维码"></td>
 <td><img src="/kwabol.png" alt="KWABOL"></td>
 <td><img src="/auen.png" alt=""></td>
 </tr>
@@ -91,8 +91,7 @@
 <table>
 <thead>
 <tr>
-<th>اقتەرەك</th>
-<th>7 ءبىلىم</th>
+<th>اق تەرەك</th>
 <th>اسۋ</th>
 <th>ءسوزدىك</th>
 <th>ويان</th>
@@ -101,14 +100,12 @@
 <tbody>
 <tr>
 <td><img src="/ahterek.png" alt="翻译小程序二维码"></td>
-<td><img src="/" alt="7bilim小程序二维码"></td>
 <td><img src="/asu.png" alt="阿速信息小程序二维码"></td>
 <td><img src="/minhan.png" alt=""></td>
 <td><img src="/oylan.png" alt="OYLAN单词"></td>
 </tr>
 <tr>
 <td>哈萨克语翻译小程序</td>
-<td>在线课堂</td>
 <td>信息发布平台</td>
 <td>哈汉翻译小程序</td>
 <td>背单词小程序</td>

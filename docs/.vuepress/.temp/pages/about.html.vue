@@ -6,8 +6,10 @@
 <p>还可以提交对该网站的建议。</p>
 <h2 id="💌-联系作者" tabindex="-1"><a class="header-anchor" href="#💌-联系作者" aria-hidden="true">#</a> 💌 联系作者</h2>
 <p>微信：HARAHOZI_</p>
+<p>如果你有开发经验，欢迎参与本项目的开发。</p>
 <h2 id="🚀-更新日志" tabindex="-1"><a class="header-anchor" href="#🚀-更新日志" aria-hidden="true">#</a> 🚀 更新日志</h2>
 <ul>
+<li>2021.12.23：添加疫情数据。</li>
 <li>2021.12.14：添加搜索框，更新主题。</li>
 <li>2021.12.11：上线。</li>
 </ul>

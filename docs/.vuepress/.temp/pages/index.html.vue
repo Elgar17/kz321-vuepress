@@ -80,7 +80,7 @@
 <tbody>
 <tr>
 <td><img src="/wlan.png" alt="kaz"></td>
-<td><img src="/" alt="Baursak二维码"></td>
+<td><img src="/baursak.png" alt="Baursak二维码"></td>
 <td><img src="/kwabol.png" alt="KWABOL"></td>
 <td><img src="/auen.png" alt="123"></td>
 </tr>
@@ -98,7 +98,6 @@
 <thead>
 <tr>
 <th>Akterek</th>
-<th>7bilim</th>
 <th>阿速信息</th>
 <th>民汉翻译</th>
 <th>OYAN单词</th>
@@ -107,14 +106,12 @@
 <tbody>
 <tr>
 <td><img src="/ahterek.png" alt="翻译小程序二维码"></td>
-<td><img src="/" alt="7bilim小程序二维码"></td>
 <td><img src="/asu.png" alt="阿速信息小程序二维码"></td>
 <td><img src="/minhan.png" alt="民汉翻译"></td>
 <td><img src="/oylan.png" alt="OYLAN单词"></td>
 </tr>
 <tr>
 <td>哈萨克语翻译小程序</td>
-<td>在线课堂</td>
 <td>信息发布平台</td>
 <td>哈汉翻译小程序</td>
 <td>背单词小程序</td>
