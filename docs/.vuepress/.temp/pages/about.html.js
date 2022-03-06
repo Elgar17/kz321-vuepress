@@ -29,13 +29,31 @@ export const data = {
   ],
   "filePathRelative": "about.md",
   "git": {
-    "updatedTime": 1640267713000,
+    "updatedTime": 1646104772000,
     "contributors": [
       {
         "name": "elgar17",
         "email": "1653794708@qq.com",
         "commits": 3
+      },
+      {
+        "name": "Elgar",
+        "email": "45301805+Elgar17@users.noreply.github.com",
+        "commits": 1
       }
     ]
   }
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }

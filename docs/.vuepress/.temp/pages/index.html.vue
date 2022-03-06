@@ -31,7 +31,7 @@
 <td></td>
 <td></td>
 <td><a href="https://www.sozdik.net/" target="_blank" rel="noopener noreferrer">哈汉字典<OutboundLink/></a></td>
-<td></td>
+<td><a href="https://abaialemi.kz" target="_blank" rel="noopener noreferrer">阿拜世界<OutboundLink/></a></td>
 <td></td>
 </tr>
 <tr>
@@ -56,6 +56,16 @@
 </tr>
 <tr>
 <td><a href="http://kazakh.altxw.com/" target="_blank" rel="noopener noreferrer">阿勒泰新闻网<OutboundLink/></a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://www.kazakcnr.com/" target="_blank" rel="noopener noreferrer">中国哈萨克语广播<OutboundLink/></a></td>
 <td></td>
 <td></td>
 <td></td>

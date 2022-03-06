@@ -32,13 +32,26 @@ export const data = {
   ],
   "filePathRelative": "kz/README.md",
   "git": {
-    "updatedTime": 1640267713000,
+    "updatedTime": 1640349131000,
     "contributors": [
       {
         "name": "elgar17",
         "email": "1653794708@qq.com",
-        "commits": 3
+        "commits": 4
       }
     ]
   }
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }
