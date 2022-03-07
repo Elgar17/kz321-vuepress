@@ -38,7 +38,7 @@ export default {
       this.news = data.nativeQuickNews;
        this.obj = data.continentDataList[2].countriesData[27];
        let arr = data.continentDataList[2] && data.continentDataList[2].countriesData
-       console.log(data)
+      //  console.log(data)
        for(let i = 0; i < arr.length; i++){
          if(arr[i].childStatistic == "哈萨克斯坦"){
            this.obj = arr[i]
