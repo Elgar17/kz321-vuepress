@@ -25,6 +25,7 @@
 .settings  
 .tmproj  
 .temp
+.cache
 *.esproj  
 *.sublime-project  
 *.sublime-workspace  
