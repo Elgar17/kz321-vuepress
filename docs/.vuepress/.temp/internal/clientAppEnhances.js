@@ -1,7 +1,7 @@
-import clientAppEnhance0 from 'D:/3-blog/kz321/node_modules/@vuepress/theme-default/lib/client/clientAppEnhance.js'
-import clientAppEnhance1 from 'D:/3-blog/kz321/node_modules/@vuepress/plugin-medium-zoom/lib/client/clientAppEnhance.js'
-import clientAppEnhance2 from 'D:/3-blog/kz321/node_modules/@vuepress/plugin-theme-data/lib/client/clientAppEnhance.js'
-import clientAppEnhance3 from 'D:/3-blog/kz321/docs/.vuepress/.temp/register-components/clientAppEnhance.e220a2e0.js'
+import clientAppEnhance0 from 'D:/code/github/kz321-vuepress/node_modules/@vuepress/theme-default/lib/client/clientAppEnhance.js'
+import clientAppEnhance1 from 'D:/code/github/kz321-vuepress/node_modules/@vuepress/plugin-medium-zoom/lib/client/clientAppEnhance.js'
+import clientAppEnhance2 from 'D:/code/github/kz321-vuepress/node_modules/@vuepress/plugin-theme-data/lib/client/clientAppEnhance.js'
+import clientAppEnhance3 from 'D:/code/github/kz321-vuepress/docs/.vuepress/.temp/register-components/clientAppEnhance.9b2d9bc0.js'
 
 export const clientAppEnhances = [
   clientAppEnhance0,

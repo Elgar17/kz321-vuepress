@@ -1,6 +1,6 @@
 import { defineAsyncComponent } from 'vue'
 
 export const layoutComponents = {
-  "404": defineAsyncComponent(() => import("D:/3-blog/kz321/node_modules/@vuepress/theme-default/lib/client/layouts/404.vue")),
-  "Layout": defineAsyncComponent(() => import("D:/3-blog/kz321/node_modules/@vuepress/theme-default/lib/client/layouts/Layout.vue")),
+  "404": defineAsyncComponent(() => import("D:/code/github/kz321-vuepress/node_modules/@vuepress/theme-default/lib/client/layouts/404.vue")),
+  "Layout": defineAsyncComponent(() => import("D:/code/github/kz321-vuepress/node_modules/@vuepress/theme-default/lib/client/layouts/Layout.vue")),
 }

@@ -17,7 +17,26 @@ export const data = {
       "level": 2,
       "title": "📄 分类",
       "slug": "📄-分类",
-      "children": []
+      "children": [
+        {
+          "level": 3,
+          "title": "新闻与资讯",
+          "slug": "新闻与资讯",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "娱乐",
+          "slug": "娱乐",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "学习与工具",
+          "slug": "学习与工具",
+          "children": []
+        }
+      ]
     },
     {
       "level": 2,
