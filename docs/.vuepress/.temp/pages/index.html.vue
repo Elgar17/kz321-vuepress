@@ -1,5 +1,4 @@
-<template><InputSearch/>
-<h2 id="📄-分类" tabindex="-1"><a class="header-anchor" href="#📄-分类" aria-hidden="true">#</a> 📄 分类</h2>
+<template><h2 id="📄-网站分类" tabindex="-1"><a class="header-anchor" href="#📄-网站分类" aria-hidden="true">#</a> 📄 网站分类</h2>
 <h3 id="新闻与资讯" tabindex="-1"><a class="header-anchor" href="#新闻与资讯" aria-hidden="true">#</a> 新闻与资讯</h3>
 <ul>
 <li><a href="https://www.inform.kz/ar" target="_blank" rel="noopener noreferrer">哈萨克国际通信社<OutboundLink/></a></li>
@@ -35,6 +34,7 @@
 <th>Baursak</th>
 <th>Kwabol</th>
 <th>Auen</th>
+<th>Arna</th>
 </tr>
 </thead>
 <tbody>
@@ -43,12 +43,14 @@
 <td><img src="/baursak.png" alt="Baursak二维码"></td>
 <td><img src="/kwabol.png" alt="KWABOL"></td>
 <td><img src="/auen.png" alt="123"></td>
+<td><img src="/arna.png" alt="arna"></td>
 </tr>
 <tr>
 <td>有温度的网络电台</td>
 <td>爆笑口袋视频</td>
 <td>工作，创业等有趣内容</td>
 <td>最新音乐视频</td>
+<td>哈萨克语在线课堂</td>
 </tr>
 </tbody>
 </table>
@@ -79,5 +81,4 @@
 </tbody>
 </table>
 <p><a href="https://support.qq.com/products/369710" target="_blank" rel="noopener noreferrer">提交小程序<OutboundLink/></a>。</p>
-<h2 id="😷-疫情动态" tabindex="-1"><a class="header-anchor" href="#😷-疫情动态" aria-hidden="true">#</a> 😷 疫情动态</h2>
-<EpidemicMap/></template>
+</template>

@@ -15,6 +15,6 @@ git add -A
 git commit -m 'auto commit'
 
 # 提交
-git push -f git@github.com:Elgar17/Elgar17.github.io.git
+git push -f git@github.com:Elgar17/Elgar17.github.io.git master
 
 cd -

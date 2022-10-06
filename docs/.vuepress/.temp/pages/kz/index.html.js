@@ -15,7 +15,26 @@ export const data = {
       "level": 2,
       "title": "📄 سايتتار",
       "slug": "📄-سايتتار",
-      "children": []
+      "children": [
+        {
+          "level": 3,
+          "title": "جاڭالىقتار",
+          "slug": "جاڭالىقتار",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "امبەباپ",
+          "slug": "امبەباپ",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "قۇرالدار",
+          "slug": "قۇرالدار",
+          "children": []
+        }
+      ]
     },
     {
       "level": 2,
@@ -41,17 +60,4 @@ export const data = {
       }
     ]
   }
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

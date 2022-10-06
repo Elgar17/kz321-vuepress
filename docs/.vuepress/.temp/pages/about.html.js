@@ -10,14 +10,14 @@ export const data = {
   "headers": [
     {
       "level": 2,
-      "title": "➕ 如何提交网站？",
-      "slug": "➕-如何提交网站",
+      "title": "💌 联系作者",
+      "slug": "💌-联系作者",
       "children": []
     },
     {
       "level": 2,
-      "title": "💌 联系作者",
-      "slug": "💌-联系作者",
+      "title": "➕ 如何提交网站？",
+      "slug": "➕-如何提交网站",
       "children": []
     },
     {
@@ -43,17 +43,4 @@ export const data = {
       }
     ]
   }
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

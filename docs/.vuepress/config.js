@@ -23,7 +23,7 @@ module.exports = {
       })();`
     ]
   ],
-  description: 'KZ321，哈萨克语导航网站，KZ321.top，哈萨克网站', //描述
+  description: '致力于分享互联网上的优质的哈萨克语网站与内容。', //描述
   dest: './dist', // 设置输出目录
   port: 8080, // 端口
 
@@ -37,16 +37,20 @@ module.exports = {
         navbar: [{
           text: "首页",
           link: "/"
-        },{
+        },
+        {
           text: "学习",
           link: "/learn.md"
-        }, {
+        }, 
+        {
           text: "提交网址",
           link: "https://support.qq.com/products/369710"
-        }, {
+        }, 
+        {
           text: '关于',
           link: "/about.md"
-        }],
+        }
+      ],
       },
       '/kz/': {
         selectLanguageName: 'قازاقشا',
@@ -56,10 +60,12 @@ module.exports = {
         }, {
           text: "سايىت قوسۋ ",
           link: "https://support.qq.com/products/369710"
-        }, {
+        }, 
+        {
           text: 'ءبىزجايلى ',
           link: "/about.md"
-        }],
+        }
+      ],
       },
     }
   },
@@ -83,7 +89,7 @@ module.exports = {
       {
         components: {
           InputSearch: path.resolve(__dirname, './components/InputSearch.vue'),
-          EpidemicMap: path.resolve(__dirname, './components/EpidemicMap.vue'),
+          // EpidemicMap: path.resolve(__dirname, './components/EpidemicMap.vue'),
         },
       },
     ],

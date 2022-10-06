@@ -2,7 +2,7 @@ export const siteData = {
   "base": "/",
   "lang": "en-US",
   "title": "KZ321",
-  "description": "KZ321，哈萨克语导航网站，KZ321.top，哈萨克网站",
+  "description": "致力于分享互联网上的优质的哈萨克语网站与内容。",
   "head": [
     [
       "link",
@@ -28,17 +28,4 @@ export const siteData = {
       "description": "kaz"
     }
   }
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateSiteData) {
-    __VUE_HMR_RUNTIME__.updateSiteData(siteData)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ siteData }) => {
-    __VUE_HMR_RUNTIME__.updateSiteData(siteData)
-  })
 }
