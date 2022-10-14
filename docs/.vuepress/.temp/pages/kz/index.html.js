@@ -18,8 +18,8 @@ export const data = {
       "children": [
         {
           "level": 3,
-          "title": "جاڭالىقتار",
-          "slug": "جاڭالىقتار",
+          "title": "قۇرالدار",
+          "slug": "قۇرالدار",
           "children": []
         },
         {
@@ -30,8 +30,8 @@ export const data = {
         },
         {
           "level": 3,
-          "title": "قۇرالدار",
-          "slug": "قۇرالدار",
+          "title": "جاڭالىقتار",
+          "slug": "جاڭالىقتار",
           "children": []
         }
       ]
@@ -51,13 +51,31 @@ export const data = {
   ],
   "filePathRelative": "kz/README.md",
   "git": {
-    "updatedTime": 1640349131000,
+    "updatedTime": 1665075178000,
     "contributors": [
       {
         "name": "elgar17",
         "email": "1653794708@qq.com",
         "commits": 4
+      },
+      {
+        "name": "Elgar17",
+        "email": "1653794708@qq.com",
+        "commits": 1
       }
     ]
   }
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }

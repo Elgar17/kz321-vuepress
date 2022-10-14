@@ -19,8 +19,8 @@ export const data = {
       "children": [
         {
           "level": 3,
-          "title": "新闻与资讯",
-          "slug": "新闻与资讯",
+          "title": "学习与工具",
+          "slug": "学习与工具",
           "children": []
         },
         {
@@ -31,8 +31,8 @@ export const data = {
         },
         {
           "level": 3,
-          "title": "学习与工具",
-          "slug": "学习与工具",
+          "title": "新闻与资讯",
+          "slug": "新闻与资讯",
           "children": []
         }
       ]
@@ -52,7 +52,7 @@ export const data = {
   ],
   "filePathRelative": "README.md",
   "git": {
-    "updatedTime": 1664981907000,
+    "updatedTime": 1665075178000,
     "contributors": [
       {
         "name": "elgar17",
@@ -60,15 +60,28 @@ export const data = {
         "commits": 4
       },
       {
-        "name": "Elgar",
-        "email": "45301805+Elgar17@users.noreply.github.com",
-        "commits": 1
-      },
-      {
         "name": "Elgar17",
         "email": "1653794708@qq.com",
+        "commits": 2
+      },
+      {
+        "name": "Elgar",
+        "email": "45301805+Elgar17@users.noreply.github.com",
         "commits": 1
       }
     ]
   }
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }

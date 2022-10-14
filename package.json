@@ -14,5 +14,10 @@
   "devDependencies": {
     "@vuepress/plugin-register-components": "^2.0.0-beta.27",
     "vuepress": "^2.0.0-beta.27"
+  },
+  "dependencies": {
+    "leancloud-storage": "^4.13.2",
+    "valine": "^1.5.1",
+    "vuepress-plugin-comment": "^0.7.3"
   }
 }
