@@ -42,12 +42,12 @@ module.exports = {
             link: "/",
           },
           {
-            text: "学习",
+            text: "资源",
             link: "/learn.md",
           },
           {
-            text: "提交网址",
-            link: "https://support.qq.com/products/369710",
+            text: "博客",
+            link: "/blog/",
           },
           {
             text: "关于",
@@ -72,7 +72,24 @@ module.exports = {
           },
         ],
       },
+      // sidebar: {
+      //   "/blog/": [
+      //     {
+      //       title: "博客",
+      //       children: ["", "1-win11-kaq-keyborad", "test"],
+      //     },
+      //   ],
+      // },
     },
+    sidebar: {
+      "/blog/": [
+        {
+          title: "博客",
+          children: ["", "1-win11-kaq-keyborad"],
+        },
+      ],
+    },
+    darkMode: true,
   },
   locales: {
     // 键名是该语言所属的子路径

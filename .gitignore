@@ -43,4 +43,4 @@ node_modules/
 jscoverage_lib/  
 bower_components/  
 dist/
-.temp/
+docs/.vuepress/.temp/

@@ -11,12 +11,12 @@ export const themeData = {
           "link": "/"
         },
         {
-          "text": "学习",
+          "text": "资源",
           "link": "/learn.md"
         },
         {
-          "text": "提交网址",
-          "link": "https://support.qq.com/products/369710"
+          "text": "博客",
+          "link": "/blog/"
         },
         {
           "text": "关于",
@@ -42,12 +42,22 @@ export const themeData = {
       ]
     }
   },
-  "navbar": [],
+  "sidebar": {
+    "/blog/": [
+      {
+        "title": "博客",
+        "children": [
+          "",
+          "1-win11-kaq-keyborad"
+        ]
+      }
+    ]
+  },
   "darkMode": true,
+  "navbar": [],
   "repo": null,
   "selectLanguageText": "Languages",
   "selectLanguageAriaLabel": "Select language",
-  "sidebar": "auto",
   "sidebarDepth": 2,
   "editLink": true,
   "editLinkText": "Edit this page",
