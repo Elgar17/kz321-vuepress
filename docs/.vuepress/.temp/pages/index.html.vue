@@ -1,12 +1,13 @@
 <template><h2 id="📄-网站分类" tabindex="-1"><a class="header-anchor" href="#📄-网站分类" aria-hidden="true">#</a> 📄 网站分类</h2>
 <h3 id="学习与工具" tabindex="-1"><a class="header-anchor" href="#学习与工具" aria-hidden="true">#</a> 学习与工具</h3>
 <ul>
+<li><a href="https://dombira.art/" target="_blank" rel="noopener noreferrer">冬不拉曲谱<OutboundLink/></a>：冬不拉曲谱。</li>
+<li><a href="https://noorty.net/dombra/" target="_blank" rel="noopener noreferrer">冬不拉教学动画<OutboundLink/></a>：冬不拉教学动画。</li>
 <li><a href="https://ha-pin.github.io/zh-CN" target="_blank" rel="noopener noreferrer">哈拼<OutboundLink/></a>：哈萨克语拼音化项目，哈拼目前主要由三个大项构成，即 哈拼标准化、哈拼输入法支持、哈拼开发工具。</li>
 <li><a href="https://www.kazakhsoft.com/" target="_blank" rel="noopener noreferrer">kazakhsoft<OutboundLink/></a>：哈萨克语软件资讯网站。</li>
 <li><a href="https://www.sozdik.net/" target="_blank" rel="noopener noreferrer">哈汉词典<OutboundLink/></a>：在线哈萨克语词典，支持哈汉，哈俄，哈英语言。</li>
 <li><a href="https://abaialemi.kz" target="_blank" rel="noopener noreferrer">阿拜世界<OutboundLink/></a>：阿拜的文学作品集。</li>
 <li><a href="https://www.qazlatyn.kz/tote/converter/text" target="_blank" rel="noopener noreferrer">文字转换<OutboundLink/></a>：在线哈萨克语文转换工具。</li>
-<li><a href="https://7bilim.com/" target="_blank" rel="noopener noreferrer">柒文在线学堂<OutboundLink/></a>：哈萨克语在线课堂，包括英语、汉语、俄语、计算机等课程。</li>
 <li><a href="http://akterek.com/" target="_blank" rel="noopener noreferrer">akterek<OutboundLink/></a>：哈汉小程序词典。</li>
 <li><a href="https://tumalas.kz/mobi/#/" target="_blank" rel="noopener noreferrer">tumalas<OutboundLink/></a>：哈萨克玉兹树。</li>
 </ul>
@@ -26,56 +27,21 @@
 <li><a href="http://kazak.xjkunlun.gov.cn/" target="_blank" rel="noopener noreferrer">昆仑网<OutboundLink/></a></li>
 </ul>
 <p><a href="https://support.qq.com/products/369710" target="_blank" rel="noopener noreferrer">提交网站<OutboundLink/></a>，点击链接留言提交新的网站。</p>
-<h2 id="📚-公众号" tabindex="-1"><a class="header-anchor" href="#📚-公众号" aria-hidden="true">#</a> 📚 公众号</h2>
-<table>
-<thead>
-<tr>
-<th>乌兰网络电台</th>
-<th>Baursak</th>
-<th>Kwabol</th>
-<th>Auen</th>
-<th>Arna</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="/wlan.png" alt="kaz"></td>
-<td><img src="/baursak.png" alt="Baursak二维码"></td>
-<td><img src="/kwabol.png" alt="KWABOL"></td>
-<td><img src="/auen.png" alt="123"></td>
-<td><img src="/arna.png" alt="arna"></td>
-</tr>
-<tr>
-<td>有温度的网络电台</td>
-<td>爆笑口袋视频</td>
-<td>工作，创业等有趣内容</td>
-<td>最新音乐视频</td>
-<td>哈萨克语在线课堂</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://support.qq.com/products/369710" target="_blank" rel="noopener noreferrer">提交公众号<OutboundLink/></a>。</p>
 <h2 id="📱-小程序" tabindex="-1"><a class="header-anchor" href="#📱-小程序" aria-hidden="true">#</a> 📱 小程序</h2>
 <table>
 <thead>
 <tr>
 <th>Akterek</th>
-<th>阿速信息</th>
-<th>民汉翻译</th>
 <th>OYAN单词</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><img src="/ahterek.png" alt="翻译小程序二维码"></td>
-<td><img src="/asu.png" alt="阿速信息小程序二维码"></td>
-<td><img src="/minhan.png" alt="民汉翻译"></td>
 <td><img src="/oylan.png" alt="OYLAN单词"></td>
 </tr>
 <tr>
 <td>哈萨克语翻译小程序</td>
-<td>信息发布平台</td>
-<td>哈汉翻译小程序</td>
 <td>背单词小程序</td>
 </tr>
 </tbody>

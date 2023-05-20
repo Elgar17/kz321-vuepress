@@ -11,12 +11,13 @@ footer: Copyright © 2021 Elǵar
 
 ### 学习与工具
 
+- [冬不拉曲谱](https://dombira.art/)：冬不拉曲谱。
+- [冬不拉教学动画](https://noorty.net/dombra/)：冬不拉教学动画。 
 - [哈拼](https://ha-pin.github.io/zh-CN)：哈萨克语拼音化项目，哈拼目前主要由三个大项构成，即 哈拼标准化、哈拼输入法支持、哈拼开发工具。
 - [kazakhsoft](https://www.kazakhsoft.com/)：哈萨克语软件资讯网站。
 - [哈汉词典](https://www.sozdik.net/)：在线哈萨克语词典，支持哈汉，哈俄，哈英语言。
 - [阿拜世界](https://abaialemi.kz)：阿拜的文学作品集。
 - [文字转换](https://www.qazlatyn.kz/tote/converter/text)：在线哈萨克语文转换工具。
-- [柒文在线学堂](https://7bilim.com/)：哈萨克语在线课堂，包括英语、汉语、俄语、计算机等课程。
 - [akterek](http://akterek.com/)：哈汉小程序词典。
 - [tumalas](https://tumalas.kz/mobi/#/)：哈萨克玉兹树。
 
@@ -35,24 +36,14 @@ footer: Copyright © 2021 Elǵar
 - [天山网](http://kazakh.ts.cn/) 
 - [昆仑网](http://kazak.xjkunlun.gov.cn/) 
 
-
 [提交网站](https://support.qq.com/products/369710)，点击链接留言提交新的网站。
-
-## 📚 公众号
-
-| 乌兰网络电台      | Baursak                        | Kwabol                 | Auen              | Arna |
-|-------------------|--------------------------------|------------------------|-------------------|-------------------|
-| ![kaz](/wlan.png) | ![Baursak二维码](/baursak.png) | ![KWABOL](/kwabol.png) | ![123](/auen.png) | ![arna](/arna.png) |
-| 有温度的网络电台  | 爆笑口袋视频                   | 工作，创业等有趣内容   | 最新音乐视频      | 哈萨克语在线课堂 |
-
-[提交公众号](https://support.qq.com/products/369710)。
 
 ## 📱 小程序
 
-| Akterek                           | 阿速信息                          | 民汉翻译                 | OYAN单词                 |
-|-----------------------------------|-----------------------------------|--------------------------|--------------------------|
-| ![翻译小程序二维码](/ahterek.png) | ![阿速信息小程序二维码](/asu.png) | ![民汉翻译](/minhan.png) | ![OYLAN单词](/oylan.png) |
-| 哈萨克语翻译小程序                | 信息发布平台                      | 哈汉翻译小程序           | 背单词小程序             |
+| Akterek                           | OYAN单词                 |
+|-----------------------------------|--------------------------|
+| ![翻译小程序二维码](/ahterek.png)  | ![OYLAN单词](/oylan.png) |
+| 哈萨克语翻译小程序                | 背单词小程序             |
 
 [提交小程序](https://support.qq.com/products/369710)。
 

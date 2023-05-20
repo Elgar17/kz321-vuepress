@@ -39,12 +39,6 @@ export const data = {
     },
     {
       "level": 2,
-      "title": "📚 公众号",
-      "slug": "📚-公众号",
-      "children": []
-    },
-    {
-      "level": 2,
       "title": "📱 小程序",
       "slug": "📱-小程序",
       "children": []
