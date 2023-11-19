@@ -2,7 +2,8 @@
 <h3 id="学习与工具" tabindex="-1"><a class="header-anchor" href="#学习与工具" aria-hidden="true">#</a> 学习与工具</h3>
 <ul>
 <li><a href="https://dombira.art/" target="_blank" rel="noopener noreferrer">冬不拉曲谱<OutboundLink/></a>：冬不拉曲谱。</li>
-<li><a href="https://noorty.net/dombra/" target="_blank" rel="noopener noreferrer">冬不拉教学动画<OutboundLink/></a>：冬不拉教学动画。</li>
+<li><a href="http://kzfont.top" target="_blank" rel="noopener noreferrer">哈语字体<OutboundLink/></a>：哈萨克语字体网站。</li>
+<li><a href="https://www.kazakhsoft.com/IMe" target="_blank" rel="noopener noreferrer">哈萨克语输入法<OutboundLink/></a>：windows 哈萨克语输入法。</li>
 <li><a href="https://ha-pin.github.io/zh-CN" target="_blank" rel="noopener noreferrer">哈拼<OutboundLink/></a>：哈萨克语拼音化项目，哈拼目前主要由三个大项构成，即 哈拼标准化、哈拼输入法支持、哈拼开发工具。</li>
 <li><a href="https://www.kazakhsoft.com/" target="_blank" rel="noopener noreferrer">kazakhsoft<OutboundLink/></a>：哈萨克语软件资讯网站。</li>
 <li><a href="https://www.sozdik.net/" target="_blank" rel="noopener noreferrer">哈汉词典<OutboundLink/></a>：在线哈萨克语词典，支持哈汉，哈俄，哈英语言。</li>

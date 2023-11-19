@@ -1,7 +1,7 @@
 const { path } = require("@vuepress/utils");
 
 module.exports = {
-  title: "KZ321",
+  title: "KZ321.top",
   base: "/",
   head: [
     [
@@ -55,23 +55,23 @@ module.exports = {
           },
         ],
       },
-      "/kz/": {
-        selectLanguageName: "قازاقشا",
-        navbar: [
-          {
-            text: "باس بەت",
-            link: "/",
-          },
-          {
-            text: "سايىت قوسۋ ",
-            link: "https://support.qq.com/products/369710",
-          },
-          {
-            text: "ءبىزجايلى ",
-            link: "/about.md",
-          },
-        ],
-      },
+      // "/kz/": {
+      //   selectLanguageName: "قازاقشا",
+      //   navbar: [
+      //     {
+      //       text: "باس بەت",
+      //       link: "/",
+      //     },
+      //     {
+      //       text: "سايىت قوسۋ ",
+      //       link: "https://support.qq.com/products/369710",
+      //     },
+      //     {
+      //       text: "ءبىزجايلى ",
+      //       link: "/about.md",
+      //     },
+      //   ],
+      // },
       // sidebar: {
       //   "/blog/": [
       //     {
@@ -96,14 +96,14 @@ module.exports = {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     "/": {
       lang: "zh", // 将会被设置为 <html> 的 lang 属性
-      title: "kz321",
+      title: "kz321.top",
       // description: 'Vue-powered Static Site Generator'
     },
-    "/kz/": {
-      lang: "kz",
-      title: "kz321",
-      description: "kaz",
-    },
+    // "/kz/": {
+    //   lang: "kz",
+    //   title: "kz321",
+    //   description: "kaz",
+    // },
   },
   plugins: [
     [

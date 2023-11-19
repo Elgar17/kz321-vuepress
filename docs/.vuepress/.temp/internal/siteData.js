@@ -1,7 +1,7 @@
 export const siteData = {
   "base": "/",
   "lang": "en-US",
-  "title": "KZ321",
+  "title": "KZ321.top",
   "description": "致力于分享互联网上的优质的哈萨克语网站与内容。",
   "head": [
     [
@@ -20,12 +20,7 @@ export const siteData = {
   "locales": {
     "/": {
       "lang": "zh",
-      "title": "kz321"
-    },
-    "/kz/": {
-      "lang": "kz",
-      "title": "kz321",
-      "description": "kaz"
+      "title": "kz321.top"
     }
   }
 }

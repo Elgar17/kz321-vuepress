@@ -23,23 +23,6 @@ export const themeData = {
           "link": "/about.md"
         }
       ]
-    },
-    "/kz/": {
-      "selectLanguageName": "قازاقشا",
-      "navbar": [
-        {
-          "text": "باس بەت",
-          "link": "/"
-        },
-        {
-          "text": "سايىت قوسۋ ",
-          "link": "https://support.qq.com/products/369710"
-        },
-        {
-          "text": "ءبىزجايلى ",
-          "link": "/about.md"
-        }
-      ]
     }
   },
   "sidebar": {

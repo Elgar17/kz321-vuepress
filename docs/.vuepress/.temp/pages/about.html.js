@@ -29,12 +29,12 @@ export const data = {
   ],
   "filePathRelative": "about.md",
   "git": {
-    "updatedTime": 1665923636000,
+    "updatedTime": 1684591132000,
     "contributors": [
       {
         "name": "Elgar17",
         "email": "1653794708@qq.com",
-        "commits": 3
+        "commits": 4
       },
       {
         "name": "elgar17",

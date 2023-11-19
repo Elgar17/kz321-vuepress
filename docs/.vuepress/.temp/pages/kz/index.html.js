@@ -2,7 +2,7 @@ export const data = {
   "key": "v-2d0a9f07",
   "path": "/kz/",
   "title": "قازاقشا باس بەت",
-  "lang": "kz",
+  "lang": "zh",
   "frontmatter": {
     "home": true,
     "pageClass": "rtl",
@@ -45,7 +45,7 @@ export const data = {
   ],
   "filePathRelative": "kz/README.md",
   "git": {
-    "updatedTime": 1665759226000,
+    "updatedTime": 1684591040000,
     "contributors": [
       {
         "name": "elgar17",
@@ -55,7 +55,7 @@ export const data = {
       {
         "name": "Elgar17",
         "email": "1653794708@qq.com",
-        "commits": 2
+        "commits": 3
       }
     ]
   }
