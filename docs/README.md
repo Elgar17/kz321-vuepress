@@ -10,9 +10,10 @@ footer: Copyright © 2021 Elǵar
 
 ### 学习与工具
 
+- [ahmet office](https://ahmet.kz/tote/)：办公软件，支持语法检查、文字转换等功能。
+- [哈萨克语输入法](https://www.kazakhsoft.com/IMe)：windows 哈萨克语输入法。
 - [冬不拉曲谱](https://dombira.art/)：冬不拉曲谱。
 - [哈语字体](http://kzfont.top)：哈萨克语字体网站。 
-- [哈萨克语输入法](https://www.kazakhsoft.com/IMe)：windows 哈萨克语输入法。
 - [哈拼](https://ha-pin.github.io/zh-CN)：哈萨克语拼音化项目，哈拼目前主要由三个大项构成，即 哈拼标准化、哈拼输入法支持、哈拼开发工具。
 - [kazakhsoft](https://www.kazakhsoft.com/)：哈萨克语软件资讯网站。
 - [哈汉词典](https://www.sozdik.net/)：在线哈萨克语词典，支持哈汉，哈俄，哈英语言。

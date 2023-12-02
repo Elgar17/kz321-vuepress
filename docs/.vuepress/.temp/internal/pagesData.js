@@ -7,6 +7,8 @@ export const pagesData = {
   "v-07588cce": () => import(/* webpackChunkName: "v-07588cce" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/learn.html.js").then(({ data }) => data),
   // path: /blog/1-win11-kaq-keyborad.html
   "v-166f873d": () => import(/* webpackChunkName: "v-166f873d" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/blog/1-win11-kaq-keyborad.html.js").then(({ data }) => data),
+  // path: /blog/2-kz321-site.html
+  "v-2d35b3f9": () => import(/* webpackChunkName: "v-2d35b3f9" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/blog/2-kz321-site.html.js").then(({ data }) => data),
   // path: /blog/
   "v-145ac574": () => import(/* webpackChunkName: "v-145ac574" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/blog/index.html.js").then(({ data }) => data),
   // path: /kz/
