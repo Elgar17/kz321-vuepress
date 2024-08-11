@@ -5,6 +5,8 @@ export const pagesComponents = {
   "v-8daa1a0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-8daa1a0e" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/index.html.vue")),
   // path: /about.html
   "v-22a39d25": defineAsyncComponent(() => import(/* webpackChunkName: "v-22a39d25" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/about.html.vue")),
+  // path: /alphabet.html
+  "v-22f65826": defineAsyncComponent(() => import(/* webpackChunkName: "v-22f65826" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/alphabet.html.vue")),
   // path: /learn.html
   "v-07588cce": defineAsyncComponent(() => import(/* webpackChunkName: "v-07588cce" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/learn.html.vue")),
   // path: /blog/1-win11-kaq-keyborad.html

@@ -3,7 +3,7 @@
 <ul>
 <li><a href="https://ahmet.kz/tote/" target="_blank" rel="noopener noreferrer">ahmet office<OutboundLink/></a>：办公软件，支持语法检查、文字转换等功能。</li>
 <li><a href="https://www.kazakhsoft.com/IMe" target="_blank" rel="noopener noreferrer">哈萨克语输入法<OutboundLink/></a>：windows 哈萨克语输入法。</li>
-<li><a href="https://dombira.art/" target="_blank" rel="noopener noreferrer">冬不拉曲谱<OutboundLink/></a>：冬不拉曲谱。</li>
+<li><a href="http://dombyra.noorty.net/" target="_blank" rel="noopener noreferrer">冬不拉曲谱<OutboundLink/></a>：冬不拉曲谱。</li>
 <li><a href="http://kzfont.top" target="_blank" rel="noopener noreferrer">哈语字体<OutboundLink/></a>：哈萨克语字体网站。</li>
 <li><a href="https://ha-pin.github.io/zh-CN" target="_blank" rel="noopener noreferrer">哈拼<OutboundLink/></a>：哈萨克语拼音化项目，哈拼目前主要由三个大项构成，即 哈拼标准化、哈拼输入法支持、哈拼开发工具。</li>
 <li><a href="https://www.kazakhsoft.com/" target="_blank" rel="noopener noreferrer">kazakhsoft<OutboundLink/></a>：哈萨克语软件资讯网站。</li>
@@ -12,12 +12,17 @@
 <li><a href="https://www.qazlatyn.kz/tote/converter/text" target="_blank" rel="noopener noreferrer">文字转换<OutboundLink/></a>：在线哈萨克语文转换工具。</li>
 <li><a href="http://akterek.com/" target="_blank" rel="noopener noreferrer">akterek<OutboundLink/></a>：哈汉小程序词典。</li>
 <li><a href="https://tumalas.kz/mobi/#/" target="_blank" rel="noopener noreferrer">tumalas<OutboundLink/></a>：哈萨克玉兹树。</li>
+<li><a href="https://noorty.net/others/shejire.php" target="_blank" rel="noopener noreferrer">tumalas<OutboundLink/></a>：哈萨克玉兹树(阿拉伯字母版镜像)。</li>
 </ul>
 <h3 id="娱乐" tabindex="-1"><a class="header-anchor" href="#娱乐" aria-hidden="true">#</a> 娱乐</h3>
 <ul>
 <li><a href="http://kazamuza.net" target="_blank" rel="noopener noreferrer">kazamuza<OutboundLink/></a>：最新哈萨克语音乐下载网站。</li>
 <li><a href="http://xalhar.net" target="_blank" rel="noopener noreferrer">xalhar<OutboundLink/></a>：哈萨克语音乐视频网站。</li>
 <li><a href="https://www.jaskanat.com" target="_blank" rel="noopener noreferrer">jaskanat<OutboundLink/></a>：综合娱乐资讯网站。</li>
+</ul>
+<h3 id="个人博客" tabindex="-1"><a class="header-anchor" href="#个人博客" aria-hidden="true">#</a> 个人博客</h3>
+<ul>
+<li><a href="https://noorty.net/" target="_blank" rel="noopener noreferrer">Noorty <OutboundLink/></a></li>
 </ul>
 <h3 id="新闻与资讯" tabindex="-1"><a class="header-anchor" href="#新闻与资讯" aria-hidden="true">#</a> 新闻与资讯</h3>
 <ul>

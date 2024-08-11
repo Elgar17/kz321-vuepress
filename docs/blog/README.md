@@ -9,9 +9,7 @@ sidebar: false
 
 ## 文章
 
-- [win11键位图](./1-win11-kaq-keyborad.md)
-- [曾经的 KZ321.COM](./2-kz321-site.md)
-
-
+- [windows 11 哈萨克输入法键位图](./1-win11-kaq-keyborad.md)
+- [曾经的 KZ321.COM 网站](./2-kz321-site.md)
 
 <Valink/>

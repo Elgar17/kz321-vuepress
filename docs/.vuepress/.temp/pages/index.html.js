@@ -31,6 +31,12 @@ export const data = {
         },
         {
           "level": 3,
+          "title": "个人博客",
+          "slug": "个人博客",
+          "children": []
+        },
+        {
+          "level": 3,
           "title": "新闻与资讯",
           "slug": "新闻与资讯",
           "children": []
@@ -46,12 +52,12 @@ export const data = {
   ],
   "filePathRelative": "README.md",
   "git": {
-    "updatedTime": 1700392948000,
+    "updatedTime": 1701520911000,
     "contributors": [
       {
         "name": "Elgar17",
         "email": "1653794708@qq.com",
-        "commits": 5
+        "commits": 6
       },
       {
         "name": "elgar17",

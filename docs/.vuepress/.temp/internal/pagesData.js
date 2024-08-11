@@ -3,6 +3,8 @@ export const pagesData = {
   "v-8daa1a0e": () => import(/* webpackChunkName: "v-8daa1a0e" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/index.html.js").then(({ data }) => data),
   // path: /about.html
   "v-22a39d25": () => import(/* webpackChunkName: "v-22a39d25" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/about.html.js").then(({ data }) => data),
+  // path: /alphabet.html
+  "v-22f65826": () => import(/* webpackChunkName: "v-22f65826" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/alphabet.html.js").then(({ data }) => data),
   // path: /learn.html
   "v-07588cce": () => import(/* webpackChunkName: "v-07588cce" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/learn.html.js").then(({ data }) => data),
   // path: /blog/1-win11-kaq-keyborad.html

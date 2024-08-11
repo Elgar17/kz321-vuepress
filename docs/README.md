@@ -12,7 +12,7 @@ footer: Copyright © 2021 Elǵar
 
 - [ahmet office](https://ahmet.kz/tote/)：办公软件，支持语法检查、文字转换等功能。
 - [哈萨克语输入法](https://www.kazakhsoft.com/IMe)：windows 哈萨克语输入法。
-- [冬不拉曲谱](https://dombira.art/)：冬不拉曲谱。
+- [冬不拉曲谱](http://dombyra.noorty.net/)：冬不拉曲谱。
 - [哈语字体](http://kzfont.top)：哈萨克语字体网站。 
 - [哈拼](https://ha-pin.github.io/zh-CN)：哈萨克语拼音化项目，哈拼目前主要由三个大项构成，即 哈拼标准化、哈拼输入法支持、哈拼开发工具。
 - [kazakhsoft](https://www.kazakhsoft.com/)：哈萨克语软件资讯网站。
@@ -21,12 +21,17 @@ footer: Copyright © 2021 Elǵar
 - [文字转换](https://www.qazlatyn.kz/tote/converter/text)：在线哈萨克语文转换工具。
 - [akterek](http://akterek.com/)：哈汉小程序词典。
 - [tumalas](https://tumalas.kz/mobi/#/)：哈萨克玉兹树。
+- [tumalas](https://noorty.net/others/shejire.php)：哈萨克玉兹树(阿拉伯字母版镜像)。
 
 ### 娱乐
 
 - [kazamuza](http://kazamuza.net)：最新哈萨克语音乐下载网站。
 - [xalhar](http://xalhar.net)：哈萨克语音乐视频网站。
 - [jaskanat](https://www.jaskanat.com)：综合娱乐资讯网站。
+
+### 个人博客
+
+- [Noorty ](https://noorty.net/)
 
 ### 新闻与资讯
 
@@ -38,6 +43,7 @@ footer: Copyright © 2021 Elǵar
 - [昆仑网](http://kazak.xjkunlun.gov.cn/) 
 
 [提交网站](https://support.qq.com/products/369710)，点击链接留言提交新的网站。
+
 
 ## 📱 小程序
 

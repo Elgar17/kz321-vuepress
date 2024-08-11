@@ -2,7 +2,7 @@
 set -e
 
 # 生成静态文件
-npm run docs:build
+# npm run docs:build
 
 # 进入生成的文件夹
 cd dist
@@ -13,6 +13,8 @@ cd dist
 git init
 git add -A
 git commit -m 'auto commit'
+
+git branch -m master
 
 # 提交
 git push -f git@github.com:Elgar17/Elgar17.github.io.git master
