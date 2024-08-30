@@ -85,7 +85,7 @@ module.exports = {
       "/blog/": [
         {
           title: "博客",
-          children: ["", "1-win11-kaq-keyborad"],
+          // children: ["1-win11-kaq-keyborad", "2-kz321-site.md", "3-mac-kz-keyborad"],
         },
       ],
     },

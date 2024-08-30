@@ -9,14 +9,16 @@ export const pagesComponents = {
   "v-22f65826": defineAsyncComponent(() => import(/* webpackChunkName: "v-22f65826" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/alphabet.html.vue")),
   // path: /learn.html
   "v-07588cce": defineAsyncComponent(() => import(/* webpackChunkName: "v-07588cce" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/learn.html.vue")),
+  // path: /kz/
+  "v-2d0a9f07": defineAsyncComponent(() => import(/* webpackChunkName: "v-2d0a9f07" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/kz/index.html.vue")),
   // path: /blog/1-win11-kaq-keyborad.html
   "v-166f873d": defineAsyncComponent(() => import(/* webpackChunkName: "v-166f873d" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/blog/1-win11-kaq-keyborad.html.vue")),
   // path: /blog/2-kz321-site.html
   "v-2d35b3f9": defineAsyncComponent(() => import(/* webpackChunkName: "v-2d35b3f9" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/blog/2-kz321-site.html.vue")),
+  // path: /blog/3-mac-kz-keyborad.html
+  "v-32a8957e": defineAsyncComponent(() => import(/* webpackChunkName: "v-32a8957e" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/blog/3-mac-kz-keyborad.html.vue")),
   // path: /blog/
   "v-145ac574": defineAsyncComponent(() => import(/* webpackChunkName: "v-145ac574" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/blog/index.html.vue")),
-  // path: /kz/
-  "v-2d0a9f07": defineAsyncComponent(() => import(/* webpackChunkName: "v-2d0a9f07" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/kz/index.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"/Users/eli/code/github/kz321-vuepress/docs/.vuepress/.temp/pages/404.html.vue")),
 }

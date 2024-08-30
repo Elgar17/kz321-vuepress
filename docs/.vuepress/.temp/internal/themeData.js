@@ -28,11 +28,7 @@ export const themeData = {
   "sidebar": {
     "/blog/": [
       {
-        "title": "博客",
-        "children": [
-          "",
-          "1-win11-kaq-keyborad"
-        ]
+        "title": "博客"
       }
     ]
   },
