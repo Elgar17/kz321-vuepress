@@ -11,6 +11,10 @@ export const themeData = {
           "link": "/"
         },
         {
+          "text": "字母表",
+          "link": "/alphabet.md"
+        },
+        {
           "text": "资源",
           "link": "/learn.md"
         },

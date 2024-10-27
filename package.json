@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "leancloud-storage": "^4.13.2",
+    "lucide-vue-next": "^0.453.0",
     "valine": "^1.5.1",
     "vuepress-plugin-comment": "^0.7.3"
   }

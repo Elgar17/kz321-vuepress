@@ -42,6 +42,10 @@ module.exports = {
             link: "/",
           },
           {
+            text: "字母表",
+            link: "/alphabet.md",
+          },
+          {
             text: "资源",
             link: "/learn.md",
           },
@@ -107,16 +111,24 @@ module.exports = {
   },
   plugins: [
     [
-      "@vuepress/register-components",
+      '@vuepress/register-components',
       {
-        //componentsDir: "./components",
-        components: {
-          InputSearch: path.resolve(__dirname, "./components/InputSearch.vue"),
-          // EpidemicMap: path.resolve(__dirname, './components/EpidemicMap.vue'),
-          Valine: path.resolve(__dirname, "./components/Valine.vue"),
-          // componentsDir: "./components",
-        },
-      },
-    ],
+        componentsDir: './docs/.vuepress/components/'
+      }
+    ]
+
+    // [
+    //   "@vuepress/register-components",
+    //   {
+    //     //componentsDir: "./components",
+    //     components: {
+    //       InputSearch: path.resolve(__dirname, "./components/InputSearch.vue"),
+    //       // EpidemicMap: path.resolve(__dirname, './components/EpidemicMap.vue'),
+    //       Valine: path.resolve(__dirname, "./components/Valine.vue"),
+    //       // componentsDir: "./components",
+    //       // Alphabet: path.resolve(__dirname, "./components/Alphabet.vue")
+    //     },
+    //   },
+    // ],
   ],
 };
