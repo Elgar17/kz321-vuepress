@@ -42,18 +42,6 @@ module.exports = {
             link: "/",
           },
           {
-            text: "字母表",
-            link: "/alphabet.md",
-          },
-          {
-            text: "资源",
-            link: "/learn.md",
-          },
-          {
-            text: "博客",
-            link: "/blog/",
-          },
-          {
             text: "关于",
             link: "/about.md",
           },
@@ -86,7 +74,7 @@ module.exports = {
       // },
     },
     sidebar: {
-      "/blog/": [
+      "/b/": [
         {
           title: "博客",
           // children: ["1-win11-kaq-keyborad", "2-kz321-site.md", "3-mac-kz-keyborad"],

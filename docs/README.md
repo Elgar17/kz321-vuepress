@@ -6,17 +6,27 @@ description: 哈萨克语导航网站
 footer: Copyright © 2021 Elǵar
 ---
 
+<!-- <InputSearch /> -->
+
 ## 📄 网站分类
 
-### 学习与工具
+### 工具
+
+- [文字转换工具](./word-conversion.md)：哈萨克语传统文字转西里尔文，西里尔文转传统文字。
+- [剪影文字助手](./word-split.md)：转换后剪影正常展示哈萨克语传统文字。
+- [文字拆分工具](./word-split-view.md): 传统文字进行拆分展示。
+- [Mac 系统安装哈萨克语输入法](./b/3-mac-kz-keyborad.md)：苹果电脑输入法。
+- [Windows 哈萨克语输入法](https://www.kazakhsoft.com/IMe)：Windows 电脑输入法。
+- [Hapin](https://ha-pin.github.io/zh-CN)：哈萨克语拼音化项目，哈拼输入法、哈拼开发工具。
+- [ahmet office](https://ahmet.kz/tote/)：办公软件，支持语法检查、文字转换等功能。
+
+### 学习
 
 <!-- - [文字转换](https://www.qazlatyn.kz/tote/converter/text)：在线哈萨克语文转换工具。 -->
 <!-- - [哈语字体](http://kzfont.top)：哈萨克语字体网站。  -->
+- [字母表](/alphabet.md)：哈萨克语字母表。 
 - [离线哈汉词典](http://sozdik.kz321.top): 简易的哈汉词典。
-- [ahmet office](https://ahmet.kz/tote/)：办公软件，支持语法检查、文字转换等功能。
-- [哈萨克语输入法](https://www.kazakhsoft.com/IMe)：windows 哈萨克语输入法。
 - [冬不拉曲谱](http://dombyra.noorty.net/)：冬不拉曲谱。
-- [哈拼](https://ha-pin.github.io/zh-CN)：哈萨克语拼音化项目，哈拼目前主要由三个大项构成，即 哈拼标准化、哈拼输入法支持、哈拼开发工具。
 - [kazakhsoft](https://www.kazakhsoft.com/)：哈萨克语软件资讯网站。
 - [哈汉词典](https://www.sozdik.net/)：在线哈萨克语词典，支持哈汉，哈俄，哈英语言。
 - [阿拜世界](https://abaialemi.kz)：阿拜的文学作品集。
@@ -45,14 +55,11 @@ footer: Copyright © 2021 Elǵar
 
 [提交网站](https://support.qq.com/products/369710)，点击链接留言提交新的网站。
 
+### 博客
 
-## 📱 小程序
 
-| Akterek                           | OYAN单词                 |
-|-----------------------------------|--------------------------|
-| ![翻译小程序二维码](/ahterek.png)  | ![OYLAN单词](/oylan.png) |
-| 哈萨克语翻译小程序                | 背单词小程序             |
-
-[提交小程序](https://support.qq.com/products/369710)。
+- [windows 11 哈萨克输入法键位图](./b/1-win11-kaq-keyborad.md)
+- [曾经的 KZ321.COM 网站](./b/2-kz321-site.md)
+- [Mac 系统安装哈萨克语输入法](./b/3-mac-kz-keyborad.md)
 
 <Valine></Valine>

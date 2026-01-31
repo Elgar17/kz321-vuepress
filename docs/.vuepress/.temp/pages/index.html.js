@@ -19,8 +19,14 @@ export const data = {
       "children": [
         {
           "level": 3,
-          "title": "学习与工具",
-          "slug": "学习与工具",
+          "title": "工具",
+          "slug": "工具",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "学习",
+          "slug": "学习",
           "children": []
         },
         {
@@ -40,24 +46,24 @@ export const data = {
           "title": "新闻与资讯",
           "slug": "新闻与资讯",
           "children": []
+        },
+        {
+          "level": 3,
+          "title": "博客",
+          "slug": "博客",
+          "children": []
         }
       ]
-    },
-    {
-      "level": 2,
-      "title": "📱 小程序",
-      "slug": "📱-小程序",
-      "children": []
     }
   ],
   "filePathRelative": "README.md",
   "git": {
-    "updatedTime": 1723390287000,
+    "updatedTime": 1730017540000,
     "contributors": [
       {
         "name": "Elgar17",
         "email": "1653794708@qq.com",
-        "commits": 7
+        "commits": 8
       },
       {
         "name": "elgar17",
@@ -71,17 +77,4 @@ export const data = {
       }
     ]
   }
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

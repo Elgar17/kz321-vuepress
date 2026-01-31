@@ -1,8 +1,8 @@
 <template>
   <div class="input-search-wrap">
-    <div class="logo-wrapper">
+    <!-- <div class="logo-wrapper">
       <img src="../public/kz321.png" alt="" />
-    </div>
+    </div> -->
     <div class="input-search">
       <ul class="ingin-wrapper">
         <li
