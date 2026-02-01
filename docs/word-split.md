@@ -1,1 +1,1 @@
-<word-split />
+<WordSplit />

@@ -1,1 +1,1 @@
-<word-conversion />
+<WordConversion />

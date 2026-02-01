@@ -1,0 +1,192 @@
+/* 自定义样式 - 哈萨克斯坦国旗配色 */
+:root {
+  /* 主品牌色 - 天蓝色（哈萨克斯坦国旗背景色） */
+  --vp-c-brand: #00AFCA;
+  --vp-c-brand-light: #33C4DA;
+  --vp-c-brand-lighter: #66D4E5;
+  --vp-c-brand-dark: #0097B3;
+  --vp-c-brand-darker: #00798F;
+  
+  /* 强调色 - 金黄色（哈萨克斯坦国旗图案色） */
+  --vp-c-accent: #FEC50A;
+  --vp-c-accent-light: #FFDB4D;
+  --vp-c-accent-dark: #E5B109;
+  
+  /* 自定义按钮悬停色使用金黄色 */
+  --vp-button-brand-hover-bg: #FEC50A;
+  --vp-button-brand-hover-border: #FEC50A;
+  --vp-button-brand-hover-text: #1a1a1a;
+  
+  /* 链接色使用天蓝色 */
+  --vp-c-brand-1: #00AFCA;
+  --vp-c-brand-2: #00AFCA;
+  --vp-c-brand-3: #00AFCA;
+}
+
+/* 暗色模式配色调整 */
+.dark {
+  --vp-c-brand: #33C4DA;
+  --vp-c-brand-light: #66D4E5;
+  --vp-c-brand-lighter: #99E2EF;
+  --vp-c-brand-dark: #00AFCA;
+  --vp-c-brand-darker: #0097B3;
+  
+  --vp-c-accent: #FFDB4D;
+  --vp-c-accent-light: #FFE580;
+  --vp-c-accent-dark: #FEC50A;
+}
+
+/* ===== 网站标题渐变色 ===== */
+/* 导航栏标题渐变效果 - 哈萨克斯坦国旗配色 */
+.VPNavBarTitle .title {
+  background: linear-gradient(135deg, #00AFCA 0%, #FEC50A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.VPNavBarTitle .title:hover {
+  background: linear-gradient(135deg, #33C4DA 0%, #FFDB4D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 暗色模式下的标题渐变 */
+.dark .VPNavBarTitle .title {
+  background: linear-gradient(135deg, #33C4DA 0%, #FFDB4D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .VPNavBarTitle .title:hover {
+  background: linear-gradient(135deg, #66D4E5 0%, #FFE580 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 侧边栏站点标题也添加渐变 */
+.VPSidebarItem.level-0 .text {
+  background: linear-gradient(135deg, #00AFCA 0%, #FEC50A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* 哈萨克语字体 */
+@font-face {
+  src: url('/KazNet.ttf');
+  font-family: 'KazNet';
+  font-display: swap;
+}
+
+/* RTL 支持 - 应用 KazNet 字体 */
+.rtl .home {
+  font-family: 'KazNet', sans-serif;
+  direction: rtl;
+}
+
+.hiden-title .home #main-title {
+  display: none;
+}
+
+.rtl .home #main-title {
+  display: none;
+}
+
+.hiden-title .home .description {
+  display: none;
+}
+
+.rtl .home .description {
+  display: none;
+}
+
+/* 全局 RTL 文本样式 */
+[dir="rtl"] {
+  font-family: 'KazNet', sans-serif;
+}
+
+/* RTL textarea 和输入框 */
+textarea[dir="rtl"],
+input[dir="rtl"] {
+  font-family: 'KazNet', sans-serif;
+}
+
+/* RTL 占位符文本 */
+textarea[dir="rtl"]::placeholder,
+input[dir="rtl"]::placeholder {
+  font-family: 'KazNet', sans-serif;
+}
+
+.vp-doc h2 {
+  border-top: none;
+}
+
+/* ===== 导航栏和首页背景协调优化 ===== */
+/* 导航栏添加微妙渐变 */
+.VPNav {
+  background: linear-gradient(180deg, 
+    var(--vp-c-bg) 0%,
+    var(--vp-c-bg) 100%
+  );
+  backdrop-filter: blur(8px);
+}
+
+/* 首页整体背景 - 从顶部自然过渡 */
+.VPHome {
+  background: linear-gradient(180deg, 
+    var(--vp-c-bg) 0%,
+    rgba(0, 175, 202, 0.02) 20%,
+    rgba(254, 197, 10, 0.015) 50%,
+    rgba(0, 175, 202, 0.02) 80%,
+    var(--vp-c-bg) 100%
+  );
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 添加柔和的装饰性背景元素 */
+.VPHome::before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(0, 175, 202, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(254, 197, 10, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(0, 175, 202, 0.025) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 确保首页内容在背景之上 */
+.VPHome > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 暗色模式优化 */
+.dark .VPHome {
+  background: linear-gradient(180deg, 
+    var(--vp-c-bg) 0%,
+    rgba(51, 196, 218, 0.025) 20%,
+    rgba(255, 219, 77, 0.02) 50%,
+    rgba(51, 196, 218, 0.025) 80%,
+    var(--vp-c-bg) 100%
+  );
+}
+
+.dark .VPHome::before {
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(51, 196, 218, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(255, 219, 77, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(51, 196, 218, 0.03) 0%, transparent 50%);
+}

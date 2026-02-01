@@ -8,8 +8,8 @@ sidebar: false
 
 今天我找到一个能查看网站历史的工具，找到了当年的 kz321 导航网站。
 
-![kz321](/home-kz321.PNG) 
+![kz321](/home-kz321.png) 
 
-![kz321.com](/about-kz321.PNG)
+![kz321.com](/about-kz321.png)
 
 
