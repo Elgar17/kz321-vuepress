@@ -85,6 +85,12 @@
   font-display: swap;
 }
 
+@font-face {
+  src: url('/UKIJTuz.ttf');
+  font-family: 'UKIJ Tuz';
+  font-display: swap;
+}
+
 /* RTL 支持 - 应用 KazNet 字体 */
 .rtl .home {
   font-family: 'KazNet', sans-serif;
@@ -129,13 +135,11 @@ input[dir="rtl"]::placeholder {
 }
 
 /* ===== 导航栏和首页背景协调优化 ===== */
-/* 导航栏添加微妙渐变 */
-.VPNav {
-  background: linear-gradient(180deg, 
-    var(--vp-c-bg) 0%,
-    var(--vp-c-bg) 100%
-  );
-  backdrop-filter: blur(8px);
+/* 导航栏背景 - 仅桌面端使用 backdrop-filter（移动端会破坏 VPNavScreen 的 fixed 定位） */
+@media (min-width: 960px) {
+  .VPNav {
+    backdrop-filter: blur(8px);
+  }
 }
 
 /* 首页整体背景 - 从顶部自然过渡 */

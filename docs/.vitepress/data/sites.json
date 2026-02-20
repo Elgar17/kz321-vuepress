@@ -6,6 +6,12 @@
       "icon": "🛠️",
       "sites": [
         {
+          "name": "文本转卡片",
+          "description": "将哈萨克语、维吾尔语、阿拉伯语等语言的 Markdown 转换为卡片格式",
+          "link": "/rtl-md-to-card",
+          "icon": "✏️"
+        },
+        {
           "name": "文字转换工具",
           "description": "哈萨克语传统文字转西里尔文，西里尔文转传统文字",
           "link": "/word-conversion",

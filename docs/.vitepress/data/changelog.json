@@ -1,9 +1,13 @@
 {
   "updates": [
     {
-      "date": "2026.02.01",
-      "content": "升级网站UI",
+      "date": "2026.02.21",
+      "content": "新增文本转卡片工具，优化文本转换工具UI",
       "highlight": true
+    },
+    {
+      "date": "2026.02.01",
+      "content": "升级网站UI"
     },
     {
       "date": "2026.01.31",
