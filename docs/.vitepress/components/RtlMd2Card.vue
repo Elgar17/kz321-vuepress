@@ -219,7 +219,33 @@ export default {
     },
     renderedHtml() {
       if (!this.markdown.trim()) return "";
-      return marked.parse(this.markdown, { breaks: true, gfm: true });
+      const raw = marked.parse(this.markdown, { breaks: true, gfm: true });
+      const doc = new DOMParser().parseFromString(`<div>${raw}</div>`, "text/html");
+      const root = doc.body.firstChild;
+
+      root.querySelectorAll('input[type="checkbox"]').forEach(input => {
+        const span = doc.createElement("span");
+        span.className = input.checked ? "mc-todo-box mc-todo-checked" : "mc-todo-box";
+        if (input.checked) span.textContent = "\u2713";
+        if (input.parentElement) input.parentElement.classList.add("mc-task-item");
+        input.replaceWith(span);
+      });
+
+      root.querySelectorAll("ol").forEach(ol => {
+        const start = parseInt(ol.getAttribute("start")) || 1;
+        let idx = 0;
+        for (const child of ol.children) {
+          if (child.tagName === "LI") {
+            const num = doc.createElement("span");
+            num.className = "mc-li-num";
+            num.textContent = String(start + idx);
+            child.insertBefore(num, child.firstChild);
+            idx++;
+          }
+        }
+      });
+
+      return root.innerHTML;
     },
     currentFontFamily() {
       for (const g of this.allFontGroups) {
@@ -438,15 +464,14 @@ export default {
         return;
       }
       try {
-        const { default: html2canvas } = await import("html2canvas");
-        const canvas = await html2canvas(card, {
-          scale: 2,
-          backgroundColor: null,
-          useCORS: true,
+        const { toPng } = await import("html-to-image");
+        const dataUrl = await toPng(card, {
+          pixelRatio: 2,
+          cacheBust: true,
         });
         const link = document.createElement("a");
         link.download = `md2card-${Date.now()}.png`;
-        link.href = canvas.toDataURL("image/png");
+        link.href = dataUrl;
         link.click();
         this.showToast("图片已保存");
       } catch {
@@ -1143,61 +1168,70 @@ export default {
   text-underline-offset: 2px;
 }
 
-.mc-card-content :deep(ul) {
-  margin: 0 0 14px;
-  padding: 0 24px 0 0;
-  list-style-type: disc;
+.mc-card-content :deep(del),
+.mc-card-content :deep(s) {
+  text-decoration: line-through;
 }
 
+.mc-card-content :deep(ul),
 .mc-card-content :deep(ol) {
   margin: 0 0 14px;
-  padding: 0 24px 0 0;
-  list-style-type: decimal;
+  padding: 0;
+  list-style: none;
 }
 
 .mc-card-content :deep(li) {
   margin: 6px 0;
+  position: relative;
+  padding-right: 1.5em;
 }
 
-.mc-card-content :deep(li::marker) {
+.mc-card-content :deep(ul > li::before) {
+  content: "\2022";
+  position: absolute;
+  right: 0.2em;
+  top: 0;
+  line-height: inherit;
   color: var(--mc-card-accent);
+  font-weight: bold;
 }
 
-/* Task list (checkbox) */
-.mc-card-content :deep(ul:has(> li > input[type="checkbox"])) {
-  list-style-type: none;
+.mc-card-content :deep(.mc-li-num) {
+  position: absolute;
+  right: 0.2em;
+  top: 0;
+  line-height: inherit;
+  color: var(--mc-card-accent);
+  font-weight: 700;
+}
+
+/* Task list - no bullet marker */
+.mc-card-content :deep(.mc-task-item) {
   padding-right: 0;
 }
 
-.mc-card-content :deep(li > input[type="checkbox"]) {
-  appearance: none;
-  -webkit-appearance: none;
+.mc-card-content :deep(.mc-task-item::before) {
+  display: none;
+}
+
+.mc-card-content :deep(.mc-todo-box) {
+  display: inline-block;
   width: 18px;
   height: 18px;
   border: 2px solid var(--mc-card-accent);
   border-radius: 4px;
   vertical-align: middle;
-  margin: 0 0 0 8px;
-  cursor: default;
-  position: relative;
-  flex-shrink: 0;
+  margin-left: 8px;
 }
 
-.mc-card-content :deep(li > input[type="checkbox"]:checked) {
+.mc-card-content :deep(.mc-todo-checked) {
   background: var(--mc-card-accent);
   border-color: var(--mc-card-accent);
-}
-
-.mc-card-content :deep(li > input[type="checkbox"]:checked::after) {
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 4px;
-  width: 5px;
-  height: 9px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 14px;
 }
 
 .mc-card-content :deep(blockquote) {
