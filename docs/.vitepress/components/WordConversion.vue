@@ -41,7 +41,19 @@
       <!-- 输入区 -->
       <section class="re-panel re-panel-editor">
         <div class="re-panel-topbar">
-          <span class="re-panel-title">输入</span>
+          <div class="re-panel-title-wrap">
+            <span class="re-panel-title">输入</span>
+            <button
+              v-if="currentTab === 'cyrillic'"
+              type="button"
+              class="re-kbd-trigger"
+              aria-label="打开哈萨克语西里尔文键盘"
+              title="哈萨克语西里尔文键盘"
+              @click="showKazakhKeyboard = true"
+            >
+              <Keyboard class="re-kbd-trigger-icon" :size="18" :stroke-width="2" aria-hidden="true" />
+            </button>
+          </div>
           <div class="re-panel-actions">
             <span class="re-charcount">{{ input.length }} 字符</span>
             <button class="re-btn-sm" :class="{ invisible: !input }" @click="clearInput">清空</button>
@@ -93,14 +105,30 @@
     <Transition name="re-toast">
       <div v-if="toastMsg" class="re-toast">{{ toastMsg }}</div>
     </Transition>
+
+    <KazakhCyrillicKeyboard
+      :visible="showKazakhKeyboard"
+      @update:visible="showKazakhKeyboard = $event"
+      @close="showKazakhKeyboard = false"
+      @input-char="onKbdInputChar"
+      @backspace="onKbdBackspace"
+      @delete-forward="onKbdDeleteForward"
+      @enter="onKbdEnter"
+    />
   </div>
 </template>
 
 <script>
 import { Tote2Cyrl, Cyrl2Tote } from "./utils/WordConversion.js"
+import KazakhCyrillicKeyboard from "./KazakhCyrillicKeyboard.vue"
+import { Keyboard } from "lucide-vue-next"
 
 export default {
   name: "WordConversion",
+  components: {
+    KazakhCyrillicKeyboard,
+    Keyboard,
+  },
   data() {
     return {
       input: "",
@@ -109,6 +137,7 @@ export default {
       currentTheme: "clean",
       copyBtnText: "复制",
       toastMsg: "",
+      showKazakhKeyboard: false,
       themes: [
         { id: "clean", name: "简洁白", dot: "linear-gradient(135deg, #f8f9fa, #e9ecef)" },
         { id: "warm", name: "暖色调", dot: "linear-gradient(135deg, #fff3e0, #ffe0b2)" },
@@ -124,6 +153,7 @@ export default {
       localStorage.setItem("rtl-tab", v);
       this.input = "";
       this.result = "";
+      this.showKazakhKeyboard = false;
     },
     currentTheme(v) {
       localStorage.setItem("rtl-theme", v);
@@ -133,6 +163,71 @@ export default {
     },
   },
   methods: {
+    onKbdInputChar(ch) {
+      const el = this.$refs.inputArea;
+      if (!el) {
+        this.input += ch;
+        return;
+      }
+      const start = el.selectionStart;
+      const end = el.selectionEnd;
+      this.input = this.input.slice(0, start) + ch + this.input.slice(end);
+      const pos = start + ch.length;
+      this.$nextTick(() => {
+        el.focus();
+        el.selectionStart = el.selectionEnd = pos;
+      });
+    },
+    onKbdBackspace() {
+      const el = this.$refs.inputArea;
+      if (!el) {
+        this.input = this.input.slice(0, -1);
+        return;
+      }
+      const start = el.selectionStart;
+      const end = el.selectionEnd;
+      if (start !== end) {
+        this.input = this.input.slice(0, start) + this.input.slice(end);
+        this.$nextTick(() => {
+          el.focus();
+          el.selectionStart = el.selectionEnd = start;
+        });
+        return;
+      }
+      if (start > 0) {
+        this.input = this.input.slice(0, start - 1) + this.input.slice(start);
+        this.$nextTick(() => {
+          el.focus();
+          el.selectionStart = el.selectionEnd = start - 1;
+        });
+      }
+    },
+    onKbdDeleteForward() {
+      const el = this.$refs.inputArea;
+      if (!el) return;
+      const start = el.selectionStart;
+      const end = el.selectionEnd;
+      if (start !== end) {
+        this.input = this.input.slice(0, start) + this.input.slice(end);
+        this.$nextTick(() => {
+          el.focus();
+          el.selectionStart = el.selectionEnd = start;
+        });
+        return;
+      }
+      if (start < this.input.length) {
+        this.input = this.input.slice(0, start) + this.input.slice(start + 1);
+        this.$nextTick(() => {
+          el.focus();
+          el.selectionStart = el.selectionEnd = start;
+        });
+      }
+    },
+    onKbdEnter() {
+      this.$nextTick(() => {
+        this.$refs.inputArea?.focus();
+      });
+    },
     autoConvert() {
       if (!this.input.trim()) {
         this.result = "";
@@ -437,10 +532,40 @@ export default {
   border-bottom: 1px solid var(--re-panel-border);
 }
 
+.re-panel-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .re-panel-title {
   font-size: 13px;
   font-weight: 600;
   color: var(--re-text-secondary);
+}
+
+.re-kbd-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--re-panel-border);
+  border-radius: 6px;
+  background: var(--re-btn-bg);
+  color: var(--re-accent);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.re-kbd-trigger:hover {
+  background: var(--re-btn-hover);
+  border-color: var(--re-accent);
+}
+
+.re-kbd-trigger-icon {
+  flex-shrink: 0;
 }
 
 .re-panel-actions {
