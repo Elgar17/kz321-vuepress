@@ -19,28 +19,45 @@
               <span class="emoji" :aria-label="`Emoji for ${item.word}`">{{ item.emoji }}</span>
               <span class="word">{{ item.word }}</span>
             </div>
-            <!-- <button
+            <button
+              class="play-button"
+              type="button"
               @click="playPronunciation(item)"
-              :aria-label="`Pronounce ${item.letter} for ${item.word}`"
+              :disabled="item.isGenerating || isLoadingEngine"
+              :aria-label="`播放 ${item.word} 的发音`"
+              :title="item.cyrlWord ? `播放：${item.cyrlWord}` : '播放单词'"
             >
-              <svg v-if="item.isPlaying" class="icon icon-playing" viewBox="0 0 24 24">
+              <svg v-if="item.isPlaying || item.isGenerating" class="icon icon-playing" viewBox="0 0 24 24">
                 <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M18 3a9 9 0 0 1 0 18"></path>
               </svg>
               <svg v-else class="icon" viewBox="0 0 24 24">
                 <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07"></path>
               </svg>
-            </button> -->
+            </button>
           </div>
         </div>
       </div>
     </div>
+    <p v-if="ttsMessage" class="tts-message" :class="{ error: hasTtsError }">
+      {{ ttsMessage }}
+    </p>
   </div>
 </template>
 
 <script>
+import { markRaw } from "vue"
+import { createKazakhTtsEngine, KAZAKH_TTS_VOICE_NAME } from "./tts/piperEngine.js"
+import { Tote2Cyrl } from "./utils/WordConversion.js"
+
 export default {
   data() {
     return {
+      engine: null,
+      isLoadingEngine: false,
+      activeAudio: null,
+      audioCache: {},
+      ttsMessage: "",
+      hasTtsError: false,
       alphabet: [
         { letter: "ا", vowel: true, shape: { "3": "\uFE8E", "4": "\uFE8D" }, word: "الما", emoji: "🍎", isPlaying: false },
         { letter: "ءا", vowel: true, shape: {"3": "\uFE8E", "4": "\uFE80\uFE8D"}, word: "اتەش", emoji: "🐓", isPlaying: false },
@@ -78,15 +95,93 @@ export default {
       ]
     }
   },
-  methods: {
-    playPronunciation(item) {
-      item.isPlaying = true;
-      // In a real implementation, you would trigger audio playback here
-      // For this example, we'll just simulate it with a timeout
-      setTimeout(() => {
-        item.isPlaying = false;
-      }, 1000);
+  beforeUnmount() {
+    this.stopCurrentAudio()
+    Object.values(this.audioCache).forEach(({ url }) => URL.revokeObjectURL(url))
+    this.audioCache = {}
+    if (this.engine) {
+      this.engine.destroy()
+      this.engine = null
     }
+  },
+  methods: {
+    async ensureEngine() {
+      if (this.engine) return this.engine
+
+      this.isLoadingEngine = true
+      this.hasTtsError = false
+      this.ttsMessage = "正在加载语音资源，首次使用会稍慢..."
+
+      try {
+        this.engine = markRaw(await createKazakhTtsEngine())
+        return this.engine
+      } finally {
+        this.isLoadingEngine = false
+      }
+    },
+    async ensureAudio(item) {
+      if (this.audioCache[item.letter]) return this.audioCache[item.letter]
+
+      item.isGenerating = true
+      const cyrlWord = Tote2Cyrl(item.word).trim()
+      item.cyrlWord = cyrlWord
+
+      try {
+        const engine = await this.ensureEngine()
+        const response = await engine.generate(cyrlWord, KAZAKH_TTS_VOICE_NAME, 0)
+        const url = URL.createObjectURL(response.file)
+        const audio = markRaw(new Audio(url))
+        const audioEntry = { url, audio }
+
+        audio.onended = () => {
+          item.isPlaying = false
+          if (this.activeAudio === audio) {
+            this.activeAudio = null
+          }
+        }
+        audio.onerror = () => {
+          item.isPlaying = false
+          this.hasTtsError = true
+          this.ttsMessage = `“${item.word}” 播放失败，请稍后重试。`
+        }
+
+        this.audioCache[item.letter] = audioEntry
+        return audioEntry
+      } finally {
+        item.isGenerating = false
+      }
+    },
+    async playPronunciation(item) {
+      if (item.isGenerating || this.isLoadingEngine) return
+
+      this.hasTtsError = false
+      this.ttsMessage = ""
+      this.stopCurrentAudio()
+
+      try {
+        const { audio } = await this.ensureAudio(item)
+        audio.currentTime = 0
+        await audio.play()
+        this.activeAudio = audio
+        item.isPlaying = true
+      } catch (error) {
+        item.isPlaying = false
+        this.hasTtsError = true
+        this.ttsMessage = error instanceof Error
+          ? error.message
+          : `“${item.word}” 语音生成失败，请稍后重试。`
+      }
+    },
+    stopCurrentAudio() {
+      if (this.activeAudio) {
+        this.activeAudio.pause()
+        this.activeAudio.currentTime = 0
+        this.activeAudio = null
+      }
+      this.alphabet.forEach((item) => {
+        item.isPlaying = false
+      })
+    },
   }
 }
 </script>
@@ -146,9 +241,6 @@ h1 {
   font-family: 'KazNet', sans-serif;
   line-height: 1.2;
 }
-.vowel {
-  
-}
 
 .card-footer {
   display: flex;
@@ -181,7 +273,12 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.play-button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+button:hover:not(:disabled) {
   background-color: var(--vp-c-bg-alt);
 }
 
@@ -217,6 +314,16 @@ button:focus {
 .icon-playing {
   color: #4a90e2;
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.tts-message {
+  margin: 1rem 0 0;
+  color: var(--vp-c-text-2);
+  text-align: center;
+}
+
+.tts-message.error {
+  color: var(--vp-c-danger-1);
 }
 
 @keyframes pulse {

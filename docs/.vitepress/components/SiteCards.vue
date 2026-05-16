@@ -18,6 +18,7 @@
           <div class="card-content">
             <h3 class="card-title">
               {{ site.name }}
+              <span v-if="site.new" class="new-badge">NEW</span>
               <span v-if="site.external" class="external-icon">↗</span>
             </h3>
             <p class="card-description">{{ site.description }}</p>
@@ -130,6 +131,18 @@ export default {
 .external-icon {
   font-size: 0.75rem;
   opacity: 0.6;
+}
+
+.new-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--vp-c-brand-1);
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .card-description {

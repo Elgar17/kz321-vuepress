@@ -14,6 +14,7 @@ import SiteCards from '../components/SiteCards.vue'
 import Changelog from '../components/Changelog.vue'
 import Hero from '../components/Hero.vue'
 import RtlMd2Card from '../components/RtlMd2Card.vue'
+import KazakhTts from '../components/tts/index.vue'
 
 export default {
   extends: DefaultTheme,
@@ -30,5 +31,7 @@ export default {
     app.component('Changelog', Changelog)
     app.component('Hero', Hero)
     app.component('RtlMd2Card', RtlMd2Card)
+    app.component('KazakhTts', KazakhTts)
+    app.component('Tts', KazakhTts)
   }
 }
