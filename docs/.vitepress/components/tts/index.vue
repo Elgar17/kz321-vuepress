@@ -20,6 +20,11 @@
       spellcheck="false"
       placeholder="请使用西里尔文输入，例如：Мәтінді осы жерге жазыңыз..."
       :disabled="isGenerating"
+      :readonly="keyboardVisible"
+      @focus="handleTextInputFocus"
+      @click="captureTextSelection"
+      @keyup="captureTextSelection"
+      @select="captureTextSelection"
     />
 
     <div class="tts-actions">
@@ -65,6 +70,9 @@
       >
         下载 WAV
       </a>
+      <a class="tts-button tts-link-button" href="/about">
+        支持作者
+      </a>
     </div>
 
     <div class="tts-meta">
@@ -99,8 +107,10 @@ export default {
     KazakhCyrillicKeyboard,
   },
   data() {
+    const initialText = "Сәлеметсіз бе! Бүгін ауа райы жақсы."
+
     return {
-      text: "Сәлеметсіз бе! Бүгін ауа райы жақсы.",
+      text: initialText,
       engine: null,
       audio: null,
       audioUrl: "",
@@ -110,6 +120,8 @@ export default {
       isGenerating: false,
       isPlaying: false,
       keyboardVisible: false,
+      textCursorStart: initialText.length,
+      textCursorEnd: initialText.length,
       message: "",
       hasError: false,
     }
@@ -205,8 +217,54 @@ export default {
       }
     },
     toggleKeyboard() {
-      this.keyboardVisible = !this.keyboardVisible
+      const shouldShow = !this.keyboardVisible
+
+      if (shouldShow) {
+        this.captureTextSelection()
+        this.keyboardVisible = true
+        this.closeNativeKeyboard()
+        return
+      }
+
+      this.keyboardVisible = false
       this.focusTextInput()
+    },
+    handleTextInputFocus() {
+      if (this.keyboardVisible) {
+        this.closeNativeKeyboard()
+        return
+      }
+
+      this.captureTextSelection()
+    },
+    captureTextSelection() {
+      const input = this.$refs.textInput
+      if (!input) return
+
+      this.textCursorStart = input.selectionStart ?? this.text.length
+      this.textCursorEnd = input.selectionEnd ?? this.textCursorStart
+    },
+    closeNativeKeyboard() {
+      const blurActiveInput = () => {
+        const input = this.$refs.textInput
+        if (input) {
+          input.readOnly = true
+          input.blur()
+        }
+
+        const activeElement = document.activeElement
+        if (
+          activeElement &&
+          typeof activeElement.blur === "function" &&
+          (activeElement === this.$refs.textInput || activeElement.matches?.("input, textarea, [contenteditable='true']"))
+        ) {
+          activeElement.blur()
+        }
+      }
+
+      blurActiveInput()
+      this.$nextTick(blurActiveInput)
+      window.setTimeout(blurActiveInput, 0)
     },
     focusTextInput() {
       this.$nextTick(() => {
@@ -218,28 +276,14 @@ export default {
     insertTextAtCursor(value) {
       if (this.isGenerating) return
 
-      const input = this.$refs.textInput
-      if (!input) {
-        this.text += value
-        return
-      }
-
-      const start = input.selectionStart ?? this.text.length
-      const end = input.selectionEnd ?? this.text.length
+      const { start, end } = this.getTextCursorRange()
       this.text = this.text.slice(0, start) + value + this.text.slice(end)
       this.setTextCursor(start + value.length)
     },
     deleteTextBeforeCursor() {
       if (this.isGenerating) return
 
-      const input = this.$refs.textInput
-      if (!input) {
-        this.text = this.text.slice(0, -1)
-        return
-      }
-
-      const start = input.selectionStart ?? this.text.length
-      const end = input.selectionEnd ?? this.text.length
+      const { start, end } = this.getTextCursorRange()
       if (start !== end) {
         this.text = this.text.slice(0, start) + this.text.slice(end)
         this.setTextCursor(start)
@@ -253,11 +297,7 @@ export default {
     deleteTextAfterCursor() {
       if (this.isGenerating) return
 
-      const input = this.$refs.textInput
-      if (!input) return
-
-      const start = input.selectionStart ?? this.text.length
-      const end = input.selectionEnd ?? this.text.length
+      const { start, end } = this.getTextCursorRange()
       if (start !== end) {
         this.text = this.text.slice(0, start) + this.text.slice(end)
         this.setTextCursor(start)
@@ -268,10 +308,27 @@ export default {
       this.text = this.text.slice(0, start) + this.text.slice(start + 1)
       this.setTextCursor(start)
     },
+    getTextCursorRange() {
+      if (!this.keyboardVisible) {
+        this.captureTextSelection()
+      }
+
+      const start = Math.min(this.textCursorStart, this.text.length)
+      const end = Math.min(this.textCursorEnd, this.text.length)
+
+      return {
+        start: Math.min(start, end),
+        end: Math.max(start, end),
+      }
+    },
     setTextCursor(position) {
+      this.textCursorStart = position
+      this.textCursorEnd = position
+
       this.$nextTick(() => {
         const input = this.$refs.textInput
-        if (!input) return
+        if (!input || this.keyboardVisible) return
+
         input.focus()
         input.setSelectionRange(position, position)
       })
