@@ -7,6 +7,8 @@ description: 哈萨克语导航网站
 
 <Hero />
 
+<Announcement />
+
 <SiteCards />
 
 <div class="home-footer">
