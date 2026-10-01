@@ -13,6 +13,14 @@
           "new": true
         },
         {
+          "name": "Mac 桌面版语音合成",
+          "description": "kazlab —— 完全离线的哈萨克语文本转语音应用，支持多说话人",
+          "link": "https://github.com/Elgar17/kazlab",
+          "icon": "🎙️",
+          "new": true,
+          "external": true
+        },
+        {
           "name": "文本转卡片",
           "description": "将哈萨克语、维吾尔语、阿拉伯语等语言的 Markdown 转换为卡片格式",
           "link": "/rtl-md-to-card",

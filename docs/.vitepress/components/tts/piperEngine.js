@@ -1,7 +1,12 @@
 import { withBase } from "vitepress"
 
 const LOCAL_MODELS_BASE = withBase("/piper/models/")
-const REMOTE_MODELS_BASE = "https://huggingface.co/rhasspy/piper-voices/resolve/main/"
+// 远程音色按顺序回退：ModelScope 镜像国内可直连（内容与 HuggingFace v1.0.0 一致），
+// HuggingFace 作为海外兜底。
+const REMOTE_MODELS_BASES = [
+  "https://modelscope.cn/models/rhasspy/piper-voices/resolve/master/",
+  "https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/",
+]
 
 export const KAZAKH_TTS_VOICES = [
   { name: "kk_KZ-raya-x_low", label: "Raya · 女声", quality: "x_low", source: "local" },
@@ -23,8 +28,8 @@ export class TtsError extends Error {
   }
 }
 
-function baseUrlForVoice(name) {
-  return getVoiceMeta(name).source === "remote" ? REMOTE_MODELS_BASE : LOCAL_MODELS_BASE
+function baseUrlsForVoice(name) {
+  return getVoiceMeta(name).source === "remote" ? REMOTE_MODELS_BASES : [LOCAL_MODELS_BASE]
 }
 
 function voiceFilePath(baseUrl, name) {
@@ -33,11 +38,22 @@ function voiceFilePath(baseUrl, name) {
   return `${baseUrl}${family}/${parts.join("/")}/${parts.join("-")}`
 }
 
-const RESOURCE_CACHE_NAME = "kazakh-tts-cache-v1"
+const RESOURCE_CACHE_NAME = "kazakh-tts-cache-v2"
+let staleCachesPurged = false
 
 async function openResourceCache() {
   if (typeof caches === "undefined") return null
   try {
+    // 版本号升级后旧缓存不再被读取，首次打开时顺带删除，释放存储空间。
+    if (!staleCachesPurged) {
+      staleCachesPurged = true
+      const keys = await caches.keys()
+      await Promise.all(
+        keys
+          .filter((key) => key.startsWith("kazakh-tts-cache-") && key !== RESOURCE_CACHE_NAME)
+          .map((key) => caches.delete(key)),
+      )
+    }
     return await caches.open(RESOURCE_CACHE_NAME)
   } catch (error) {
     return null
@@ -85,6 +101,15 @@ async function readBodyWithProgress(response, onProgress) {
   return merged.buffer
 }
 
+// fetch 在网络不通、跨域被拒时抛出的是英文 TypeError，统一转成可读的中文错误。
+async function fetchOrThrow(url) {
+  try {
+    return await fetch(url)
+  } catch (error) {
+    throw new TtsError("资源下载失败，请检查网络连接后重试。", "network")
+  }
+}
+
 // 优先读取持久化的 Cache Storage，命中则不再走网络；未命中时下载并写入缓存，
 // 使模型在刷新 / 重访后仍可秒级加载，不受 HTTP 缓存过期限制。
 async function fetchArrayBufferWithProgress(url, onProgress) {
@@ -95,20 +120,33 @@ async function fetchArrayBufferWithProgress(url, onProgress) {
     if (hit) return readBodyWithProgress(hit, onProgress)
   }
 
-  const response = await fetch(url)
+  const response = await fetchOrThrow(url)
   if (!response.ok) {
     throw new TtsError(`资源下载失败（${response.status}）。`, "model")
   }
 
+  // 先边下载边上报进度，下载完再写缓存；若先 await cache.put(clone)，
+  // 会等整个文件下完才开始读原始流，进度条在下载期间一直停在 0。
+  let buffer
+  try {
+    buffer = await readBodyWithProgress(response, onProgress)
+  } catch (error) {
+    throw new TtsError("资源下载中断，请检查网络连接后重试。", "network")
+  }
+
   if (cache) {
     try {
-      await cache.put(url, response.clone())
+      const headers = {
+        "content-type": response.headers.get("content-type") || "application/octet-stream",
+        "content-length": String(buffer.byteLength),
+      }
+      await cache.put(url, new Response(buffer, { headers }))
     } catch (error) {
       // 存储空间不足等场景下忽略缓存写入，不影响本次加载。
     }
   }
 
-  return readBodyWithProgress(response, onProgress)
+  return buffer
 }
 
 async function fetchJsonCached(url) {
@@ -119,7 +157,7 @@ async function fetchJsonCached(url) {
     if (hit) return hit.json()
   }
 
-  const response = await fetch(url)
+  const response = await fetchOrThrow(url)
   if (!response.ok) {
     throw new TtsError(`语音配置下载失败（${response.status}）。`, "model")
   }
@@ -135,7 +173,7 @@ async function fetchJsonCached(url) {
   return response.json()
 }
 
-// 自定义 VoiceProvider：按音色来源路由到本地或 HuggingFace，
+// 自定义 VoiceProvider：按音色来源路由到本地或远程镜像（失败时依次回退），
 // 并对体积最大的 .onnx 模型下载上报进度。
 class ProgressVoiceProvider {
   constructor() {
@@ -153,21 +191,31 @@ class ProgressVoiceProvider {
   }
 
   async fetch(name) {
-    const filePath = voiceFilePath(baseUrlForVoice(name), name)
-
-    if (!this.configCache.has(name)) {
-      this.configCache.set(name, await fetchJsonCached(`${filePath}.onnx.json`))
+    if (!this.configCache.has(name) || !this.modelUrlCache.has(name)) {
+      await this.#load(name)
     }
-
-    if (!this.modelUrlCache.has(name)) {
-      const buffer = await fetchArrayBufferWithProgress(`${filePath}.onnx`, (loaded, total) => {
-        this.onProgress?.(loaded, total)
-      })
-      const blob = new Blob([buffer], { type: "application/octet-stream" })
-      this.modelUrlCache.set(name, URL.createObjectURL(blob))
-    }
-
     return [this.configCache.get(name), this.modelUrlCache.get(name)]
+  }
+
+  // 配置与模型必须来自同一个源；当前源任一文件失败就整体换下一个源。
+  async #load(name) {
+    let lastError
+    for (const baseUrl of baseUrlsForVoice(name)) {
+      const filePath = voiceFilePath(baseUrl, name)
+      try {
+        const config = await fetchJsonCached(`${filePath}.onnx.json`)
+        const buffer = await fetchArrayBufferWithProgress(`${filePath}.onnx`, (loaded, total) => {
+          this.onProgress?.(loaded, total)
+        })
+        const blob = new Blob([buffer], { type: "application/octet-stream" })
+        this.configCache.set(name, config)
+        this.modelUrlCache.set(name, URL.createObjectURL(blob))
+        return
+      } catch (error) {
+        lastError = error
+      }
+    }
+    throw lastError
   }
 }
 

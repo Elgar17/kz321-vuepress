@@ -52,7 +52,7 @@ docs/
 所有 `.vue` 组件在 `docs/.vitepress/theme/index.js` 中通过 `app.component()` 全局注册，Markdown 页面直接以 PascalCase 标签引用（如 `<Tts />`、`<Announcement />`）。**新增组件必须在该文件注册**，否则页面里用不了。
 
 页面 ↔ 组件对应示例：
-- `index.md` → `<Hero />`、`<Announcement />`、`<SiteCards />`、`<Valine />`
+- `index.md` → `<Hero />`、`<SiteCards />`、`<Valine />`（`<Announcement />` 公告横幅组件已注册，当前未使用）
 - `tts.md` → `<Tts />`（即 `components/tts/index.vue`）
 - `convert.md` / `word-*.md` → 对应转换/剪影组件
 
@@ -71,13 +71,14 @@ docs/
 完全浏览器端、离线的哈萨克语语音合成，基于 `piper-tts-web`（WASM + ONNX）。
 
 - **`index.vue`**：UI 组件。输入（西里尔文/阿拉伯转写双模式 + 自定义西里尔键盘）、语速/音高滑块、多音色、分句合成、逐句高亮跟读、原生播放器、WAV/MP3 下载、历史记录（localStorage）、快捷键、加载进度面板。
-- **`piperEngine.js`**：引擎封装。自定义 `ProgressVoiceProvider`（本地 + HuggingFace 音色路由、下载进度）、语速/音高 → `length_scale` 计算、分句、错误分类（`TtsError`）、**Cache Storage 持久缓存**（`clearTtsCache`）。
+- **`piperEngine.js`**：引擎封装。自定义 `ProgressVoiceProvider`（本地 + 远程音色路由、下载进度）、语速/音高 → `length_scale` 计算、分句、错误分类（`TtsError`）、**Cache Storage 持久缓存**（`clearTtsCache`）。
 - **`audioUtils.js`**：音频处理。WAV 解码、`OfflineAudioContext` 变调、缓冲拼接、AudioBuffer→WAV/MP3 编码（用 `@breezystack/lamejs`）。
 
 TTS 关键设计：
 - **语速**用 piper 的 `length_scale`（不改音高）；**音高**用 `playbackRate` 变调 + `length_scale` 反向补偿时长，并通过离线渲染烘焙进导出音频。
 - **长文本按句合成再拼接**，同时规避了 piper 只取首句的限制，并支撑逐句高亮。
-- **持久缓存**双层：`piperEngine.js` 用 Cache Storage 缓存自取的模型/数据；`public/tts-sw.js`（Service Worker，作用域限 `/onnx/`、`/piper/`、HuggingFace piper-voices）额外缓存库内部加载的 onnxruntime wasm，实现「全部资源只下载一次」。改模型时需 bump `tts-sw.js` 与 `RESOURCE_CACHE_NAME` 的版本号。
+- **远程音色**（Iseke、Issai）按 `REMOTE_MODELS_BASES` 顺序回退：先 ModelScope 的 `rhasspy/piper-voices` 镜像（国内直连、带 CORS，文件与 HF v1.0.0 逐字节一致），失败再用 HuggingFace v1.0.0。**不要用 hf-mirror.com**：它对带 Referer 的浏览器请求返回防盗链页，跨域必然失败；`huggingface.co` 在国内无法连接。
+- **持久缓存**双层：`piperEngine.js` 用 Cache Storage 缓存自取的模型/数据（含远程音色），首次打开时清理旧版本缓存；`public/tts-sw.js`（Service Worker，只拦截本站 `/onnx/`、`/piper/`）额外缓存库内部加载的 onnxruntime wasm，实现「全部资源只下载一次」。远程音色不进 SW，避免同一模型存两份。改模型时需 bump `tts-sw.js` 与 `RESOURCE_CACHE_NAME` 的版本号。
 
 ## 部署
 

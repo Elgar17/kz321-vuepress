@@ -28,7 +28,7 @@
               :title="item.cyrlWord ? `播放：${item.cyrlWord}` : '播放单词'"
             >
               <svg v-if="item.isPlaying || item.isGenerating" class="icon icon-playing" viewBox="0 0 24 24">
-                <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M18 3a9 9 0 0 1 0 18"></path>
+                <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"></path>
               </svg>
               <svg v-else class="icon" viewBox="0 0 24 24">
                 <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07"></path>
@@ -106,14 +106,19 @@ export default {
   },
   methods: {
     async ensureEngine() {
-      if (this.engine) return this.engine
+      if (this.engine && this.engine.warmedVoice === KAZAKH_TTS_VOICE_NAME) return this.engine
 
       this.isLoadingEngine = true
       this.hasTtsError = false
       this.ttsMessage = "正在加载语音资源，首次使用会稍慢..."
 
       try {
-        this.engine = markRaw(await createKazakhTtsEngine())
+        if (!this.engine) {
+          this.engine = markRaw(await createKazakhTtsEngine())
+        }
+        // 与 TTS 页一致：由引擎预取发音数据与模型（走共享的 Cache Storage），再预热推理。
+        await this.engine.warmUp(KAZAKH_TTS_VOICE_NAME)
+        this.ttsMessage = ""
         return this.engine
       } finally {
         this.isLoadingEngine = false
@@ -128,7 +133,7 @@ export default {
 
       try {
         const engine = await this.ensureEngine()
-        const response = await engine.generate(cyrlWord, KAZAKH_TTS_VOICE_NAME, 0)
+        const response = await engine.synthesize(cyrlWord, KAZAKH_TTS_VOICE_NAME)
         const url = URL.createObjectURL(response.file)
         const audio = markRaw(new Audio(url))
         const audioEntry = { url, audio }
